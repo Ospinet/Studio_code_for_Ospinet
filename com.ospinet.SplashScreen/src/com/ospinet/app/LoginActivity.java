@@ -193,6 +193,7 @@ public class LoginActivity extends Activity {
                 }
             } catch (Exception io) {
 
+                loginmsg = "Check your Internet connection";
             }
             return null;
         }

@@ -156,45 +156,76 @@
     <leaf>
       <file leaf-file-name="record_add.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/record_add.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state line="74" column="38" selection-start="2625" selection-end="2634" vertical-scroll-proportion="-0.0" vertical-offset="1258" max-vertical-offset="2312">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu2.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/menu2.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu2.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/menu2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.033333335" vertical-offset="0" max-vertical-offset="1122">
+            <state line="60" column="17" selection-start="2069" selection-end="2069" vertical-scroll-proportion="-11.88" vertical-offset="723" max-vertical-offset="1122">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="actions.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/menu/actions.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="65" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Records_Home.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Records_Home.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Records_Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="54" selection-start="2858" selection-end="2858" vertical-scroll-proportion="-13.730769" vertical-offset="969" max-vertical-offset="8092">
+            <state line="161" column="57" selection-start="5827" selection-end="5827" vertical-scroll-proportion="0.24285714" vertical-offset="1887" max-vertical-offset="11186">
+              <folding>
+                <element signature="e#3036#3362#0" expanded="true" />
+                <element signature="e#3351#3352#0" expanded="true" />
+                <element signature="e#4644#4659#0" expanded="true" />
+                <element signature="e#8126#12504#0" expanded="true" />
+                <element signature="e#9347#11066#0" expanded="true" />
+                <element signature="e#10020#10491#0" expanded="true" />
+                <element signature="e#10448#10449#0" expanded="true" />
+                <element signature="e#11038#11039#0" expanded="true" />
+                <element signature="e#11120#11764#0" expanded="true" />
+                <element signature="e#11737#11738#0" expanded="true" />
+                <element signature="e#11818#12460#0" expanded="true" />
+                <element signature="e#12433#12434#0" expanded="true" />
+                <element signature="e#12484#12485#0" expanded="true" />
+                <element signature="e#17005#21383#0" expanded="true" />
+                <element signature="e#18226#19945#0" expanded="true" />
+                <element signature="e#18899#19370#0" expanded="true" />
+                <element signature="e#19327#19328#0" expanded="true" />
+                <element signature="e#19917#19918#0" expanded="true" />
+                <element signature="e#19999#20643#0" expanded="true" />
+                <element signature="e#20616#20617#0" expanded="true" />
+                <element signature="e#20697#21339#0" expanded="true" />
+                <element signature="e#21312#21313#0" expanded="true" />
+                <element signature="e#21363#21364#0" expanded="true" />
+                <element signature="e#22669#22684#0" expanded="true" />
+                <element signature="e#25089#25560#0" expanded="true" />
+                <element signature="e#25549#25550#0" expanded="true" />
+                <element signature="e#25598#25948#0" expanded="true" />
+                <element signature="e#25937#25938#0" expanded="true" />
+                <element signature="e#26131#26467#0" expanded="true" />
+                <element signature="e#26456#26457#0" expanded="true" />
+                <element signature="e#26509#26845#0" expanded="true" />
+                <element signature="e#26834#26835#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/LoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="195" column="60" selection-start="7883" selection-end="7883" vertical-scroll-proportion="-11.884615" vertical-offset="2938" max-vertical-offset="5270">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3000#3326#0" expanded="true" />
-                <element signature="e#3315#3316#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,10 +234,8 @@
       <file leaf-file-name="Record_View.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="340" column="40" selection-start="10638" selection-end="10638" vertical-scroll-proportion="-34.653847" vertical-offset="4471" max-vertical-offset="5950">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="340" column="40" selection-start="10638" selection-end="10638" vertical-scroll-proportion="0.0" vertical-offset="4880" max-vertical-offset="5304">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,7 +243,7 @@
       <file leaf-file-name="PreMemberHome.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/PreMemberHome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="56" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="3162">
+            <state line="65" column="56" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="3162">
               <folding />
             </state>
           </provider>
@@ -222,13 +251,13 @@
       </file>
       <file leaf-file-name="records.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/records.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="36" selection-start="901" selection-end="901" vertical-scroll-proportion="-13.851851" vertical-offset="0" max-vertical-offset="1615">
+            <state line="22" column="36" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1615">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -262,14 +291,13 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1428313559589" />
+        <entry key="$PROJECT_DIR$" value="1435115070763" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/help.java" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/help.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/record_add.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/home_new.xml" />
@@ -283,16 +311,17 @@
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/menu/actions.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_View.java" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/record.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Records_Home.java" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/menu2.xml" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Records_Home.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1298" />
-    <option name="height" value="994" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1376" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -320,6 +349,27 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Tests" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="actionbarsherlock">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -408,7 +458,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,27 +506,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Tests" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="actionbarsherlock">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -497,6 +526,8 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="A6YDKRCYD675B67P" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="MyAvd" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -675,9 +706,9 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="Kitkat" />
+      <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
       <option name="WIPE_USER_DATA" value="false" />
@@ -741,30 +772,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1298" height="994" extended-state="1" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29453126" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29411766" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32590857" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32239157" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32189542" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25791326" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32239157" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25653595" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2859477" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="496" y="70" width="287" height="835" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21219227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19779412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="496" y="70" width="287" height="835" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21078432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -772,6 +802,7 @@
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32590857" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -803,23 +834,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/record_add.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="38" selection-start="2625" selection-end="2634" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2312">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/records.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/records.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="901" selection-end="901" vertical-scroll-proportion="-13.851851" vertical-offset="0" max-vertical-offset="1615">
+        <state line="22" column="36" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1615">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/menu/main_menu.xml">
@@ -845,21 +876,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="1170" selection-end="1170" vertical-scroll-proportion="1.3909091" vertical-offset="204" max-vertical-offset="1105">
-          <folding />
-        </state>
+        <state line="57" column="5" selection-start="1170" selection-end="1170" vertical-scroll-proportion="1.3909091" vertical-offset="204" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/SignUpActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="25" selection-start="3094" selection-end="3102" vertical-scroll-proportion="0.33268103" vertical-offset="1054" max-vertical-offset="2584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="705" selection-end="705" vertical-scroll-proportion="0.12662943" vertical-offset="0" max-vertical-offset="4862">
           <folding />
         </state>
       </provider>
@@ -871,26 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/menu/actions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="65" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_Edit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="42" selection-start="2636" selection-end="2650" vertical-scroll-proportion="-5.316364" vertical-offset="3723" max-vertical-offset="5525">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="340" column="40" selection-start="10638" selection-end="10638" vertical-scroll-proportion="-34.653847" vertical-offset="4471" max-vertical-offset="5950">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,24 +907,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Records_Home.java">
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="54" selection-start="2858" selection-end="2858" vertical-scroll-proportion="-13.730769" vertical-offset="969" max-vertical-offset="8092">
+        <state line="340" column="40" selection-start="10638" selection-end="10638" vertical-scroll-proportion="0.0" vertical-offset="5780" max-vertical-offset="6358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="16" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.33333334" vertical-offset="479" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/menu2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="17" selection-start="2069" selection-end="2069" vertical-scroll-proportion="-11.88" vertical-offset="723" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="60" selection-start="7883" selection-end="7883" vertical-scroll-proportion="-11.884615" vertical-offset="2938" max-vertical-offset="5270">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3000#3326#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/menu2.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Records_Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.033333335" vertical-offset="0" max-vertical-offset="1122">
-          <folding />
+        <state line="161" column="57" selection-start="5827" selection-end="5827" vertical-scroll-proportion="0.24285714" vertical-offset="1887" max-vertical-offset="11186">
+          <folding>
+            <element signature="e#3036#3362#0" expanded="true" />
+            <element signature="e#3351#3352#0" expanded="true" />
+            <element signature="e#4644#4659#0" expanded="true" />
+            <element signature="e#8126#12504#0" expanded="true" />
+            <element signature="e#9347#11066#0" expanded="true" />
+            <element signature="e#10020#10491#0" expanded="true" />
+            <element signature="e#10448#10449#0" expanded="true" />
+            <element signature="e#11038#11039#0" expanded="true" />
+            <element signature="e#11120#11764#0" expanded="true" />
+            <element signature="e#11737#11738#0" expanded="true" />
+            <element signature="e#11818#12460#0" expanded="true" />
+            <element signature="e#12433#12434#0" expanded="true" />
+            <element signature="e#12484#12485#0" expanded="true" />
+            <element signature="e#17005#21383#0" expanded="true" />
+            <element signature="e#18226#19945#0" expanded="true" />
+            <element signature="e#18899#19370#0" expanded="true" />
+            <element signature="e#19327#19328#0" expanded="true" />
+            <element signature="e#19917#19918#0" expanded="true" />
+            <element signature="e#19999#20643#0" expanded="true" />
+            <element signature="e#20616#20617#0" expanded="true" />
+            <element signature="e#20697#21339#0" expanded="true" />
+            <element signature="e#21312#21313#0" expanded="true" />
+            <element signature="e#21363#21364#0" expanded="true" />
+            <element signature="e#22669#22684#0" expanded="true" />
+            <element signature="e#25089#25560#0" expanded="true" />
+            <element signature="e#25549#25550#0" expanded="true" />
+            <element signature="e#25598#25948#0" expanded="true" />
+            <element signature="e#25937#25938#0" expanded="true" />
+            <element signature="e#26131#26467#0" expanded="true" />
+            <element signature="e#26456#26457#0" expanded="true" />
+            <element signature="e#26509#26845#0" expanded="true" />
+            <element signature="e#26834#26835#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

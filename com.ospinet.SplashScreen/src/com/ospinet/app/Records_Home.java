@@ -53,7 +53,8 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
     private SideNavigationView sideNavigationView;
     private SearchView search;
     ArrayList<record> arrrecords;
-
+    public static RecordAdapter rad;
+    public static String strQuery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -73,42 +74,7 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
         txtNoRec.setVisibility(View.GONE);
         btnNew.setVisibility(View.GONE);
 
-        super.onCreate(savedInstanceState);
-        search=(SearchView) findViewById(R.id.search);
-        search.setQueryHint("Search");
-
-        //*** setOnQueryTextFocusChangeListener ***
-        search.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                // TODO Auto-generated method stub
-
-                Toast.makeText(getBaseContext(), String.valueOf(hasFocus),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        //*** setOnQueryTextListener ***
-        search.setOnQueryTextListener(new OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // TODO Auto-generated method stub
-
-                new Searchrecord().execute();
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                // TODO Auto-generated method stub
-
-                //	Toast.makeText(getBaseContext(), newText,
-                //Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+        //super.onCreate(savedInstanceState);
 
         recordList = (ListView) findViewById(R.id.recordList);
         arrrecords = new ArrayList<record>();
@@ -129,7 +95,7 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
             String retstring = "";
             try {
                 ArrayList<NameValuePair> searchParam = new ArrayList<NameValuePair>();
-                searchParam.add(new BasicNameValuePair("search", "upload"));
+                searchParam.add(new BasicNameValuePair("search", strQuery));
                 searchParam.add(new BasicNameValuePair("mem_id", memid));
                 searchParam.add(new BasicNameValuePair("type", "title"));
 
@@ -163,51 +129,40 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
                 int flag=0;
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("result");
+                arrrecords.clear();
                 for (int i = 0; i < jsonMainNode.length(); i++) {
-                    if(i!=0)
-                    {
-                        JSONArray jArray = jsonMainNode.getJSONArray(i);
-                        for(int j=0;j<jArray.length();j++)
-                        {
-                            JSONObject jsonChildNode = jArray.getJSONObject(j);
-                            id = jsonChildNode.optString("id");
-                            Description = jsonChildNode.optString("description");
-                            Title =  jsonChildNode.optString("title");
-                            Date =  jsonChildNode.optString("date");
-                            Tag = jsonChildNode.optString("tagname");
-                            AttachmentPath = jsonChildNode.optString("filename");
-                            record r = new record();
-                            r.setdescription(Description);
-                            r.setattachment_path(AttachmentPath);
-                            r.setid(id);
-                            r.setrecord_date(Date);
-                            r.settag(Tag);
-                            r.settitle(Title);
-                            arrrecords.add(r);
-                            flag=1;
-                        }
-                    }
-                    else
-                    {
-                        JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-                    }
-                    if(flag==0)
-                    {
-                        txtNoRec.setVisibility(View.VISIBLE);
-                        btnNew.setVisibility(View.VISIBLE);
-                        recordList.setVisibility(View.GONE);
-                    }
-                    else
-                    {
-                        txtNoRec.setVisibility(View.GONE);
-                        btnNew.setVisibility(View.GONE);
-                        recordList.setVisibility(View.VISIBLE);
-                    }
+
+
+                    JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+                    id = jsonChildNode.optString("id");
+                    Description = jsonChildNode.optString("description");
+                    Title =  jsonChildNode.optString("title");
+                    Date =  jsonChildNode.optString("date");
+                    Tag = jsonChildNode.optString("tagname");
+                    AttachmentPath = jsonChildNode.optString("filename");
+                    record r = new record();
+                    r.setdescription(Description);
+                    r.setattachment_path(AttachmentPath);
+                    r.setid(id);
+                    r.setrecord_date(Date);
+                    r.settag(Tag);
+                    r.settitle(Title);
+                    arrrecords.add(r);
+                    flag=1;
+
+
+
+
                 }
-                RecordAdapter rad = new RecordAdapter(Records_Home.this,
+                txtNoRec.setVisibility(View.GONE);
+                btnNew.setVisibility(View.GONE);
+                recordList.setVisibility(View.VISIBLE);
+
+                rad = new RecordAdapter(Records_Home.this,
                         arrrecords);
 
                 recordList.setAdapter(rad);
+                rad.notifyDataSetChanged();
                 recordList.setOnItemClickListener(new OnItemClickListener() {
 
                     @Override
@@ -410,7 +365,7 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
 
 					}*/
                 }
-                RecordAdapter rad = new RecordAdapter(Records_Home.this,
+                rad = new RecordAdapter(Records_Home.this,
                         arrrecords);
 
                 recordList.setAdapter(rad);
@@ -609,6 +564,42 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setCustomView(v);
+        search=(SearchView) v.findViewById(R.id.search);
+        search.setQueryHint("Search");
+
+        //*** setOnQueryTextFocusChangeListener ***
+        search.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                // TODO Auto-generated method stub
+
+                Toast.makeText(getBaseContext(), String.valueOf(hasFocus),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //*** setOnQueryTextListener ***
+        search.setOnQueryTextListener(new OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // TODO Auto-generated method stub
+                strQuery = query;
+                new Searchrecord().execute();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // TODO Auto-generated method stub
+
+                //	Toast.makeText(getBaseContext(), newText,
+                //Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
         imgAdd.setOnClickListener(new OnClickListener() {

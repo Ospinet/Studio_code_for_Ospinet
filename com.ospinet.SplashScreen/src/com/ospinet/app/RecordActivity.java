@@ -38,6 +38,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -624,7 +625,9 @@ public static int calculateInSampleSize(BitmapFactory.Options options,
     actionBar.setDisplayShowTitleEnabled(false);
     actionBar.setCustomView(v);
     ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
+    SearchView search = (SearchView) v.findViewById(R.id.search);
     imgAdd.setVisibility(View.INVISIBLE);
+    search.setVisibility(View.INVISIBLE);
     ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);	
     imgAdd.setOnClickListener(new OnClickListener() {
 	

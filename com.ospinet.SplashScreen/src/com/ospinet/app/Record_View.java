@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -220,7 +221,9 @@ public class Record_View extends SherlockActivity implements ISideNavigationCall
     actionBar.setDisplayShowTitleEnabled(false);
     actionBar.setCustomView(v);
     ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
-    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);	
+    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
+    SearchView search = (SearchView) v.findViewById(R.id.search);
+    search.setVisibility(View.INVISIBLE);
     imgAdd.setOnClickListener(new OnClickListener() {
 	
 		@Override

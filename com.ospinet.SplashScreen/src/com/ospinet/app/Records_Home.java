@@ -38,11 +38,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.view.KeyEvent;
 import android.app.SearchManager;
 import android.widget.SearchView.OnQueryTextListener;
-import android.widget.Toast;
 
 public class Records_Home extends SherlockActivity implements ISideNavigationCallback {
     ProgressDialog dialog;
@@ -55,6 +53,7 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
     ArrayList<record> arrrecords;
     public static RecordAdapter rad;
     public static String strQuery;
+    int flag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -132,7 +131,6 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
                 arrrecords.clear();
                 for (int i = 0; i < jsonMainNode.length(); i++) {
 
-
                     JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                     id = jsonChildNode.optString("id");
                     Description = jsonChildNode.optString("description");
@@ -149,10 +147,11 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
                     r.settitle(Title);
                     arrrecords.add(r);
                     flag=1;
-
-
-
-
+                }
+                if(flag == 0){
+                    Toast.makeText(getBaseContext(), "No result found",
+                            Toast.LENGTH_SHORT).show();
+                    new Loadrecord().execute();
                 }
                 txtNoRec.setVisibility(View.GONE);
                 btnNew.setVisibility(View.GONE);
@@ -262,10 +261,12 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
 
         @Override
         protected void onPreExecute() {
+            if(flag != 2){
             super.onPreExecute();
             dialog.setMessage("Please Wait..");
             dialog.show();
             dialog.setCancelable(false);
+            }
         }
 
         @Override
@@ -565,19 +566,7 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setCustomView(v);
         search=(SearchView) v.findViewById(R.id.search);
-        search.setQueryHint("Search");
-
-        //*** setOnQueryTextFocusChangeListener ***
-        search.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                // TODO Auto-generated method stub
-
-                Toast.makeText(getBaseContext(), String.valueOf(hasFocus),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        search.setQueryHint("Search records");
 
         //*** setOnQueryTextListener ***
         search.setOnQueryTextListener(new OnQueryTextListener() {
@@ -594,6 +583,8 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
             public boolean onQueryTextChange(String newText) {
                 // TODO Auto-generated method stub
 
+                flag = 2;
+                new Loadrecord().execute();
                 //	Toast.makeText(getBaseContext(), newText,
                 //Toast.LENGTH_SHORT).show();
                 return false;

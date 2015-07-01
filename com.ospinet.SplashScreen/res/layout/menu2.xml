@@ -52,7 +52,7 @@
         android:background="@drawable/addrecord" />
 
     <SearchView android:id="@+id/search"
-        android:layout_width="235dp"
+        android:layout_width="210dp"
         android:layout_height="40dp"
         android:iconifiedByDefault="false"
         android:layout_toLeftOf="@+id/add"

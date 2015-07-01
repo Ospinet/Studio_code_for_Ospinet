@@ -1,52 +1,24 @@
 package com.ospinet.app;
 
 
-import java.util.ArrayList;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager.LayoutParams;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
 import com.androidquery.AQuery;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
-import com.ospinet.app.R;
 
 public class PreMemberHome extends SherlockActivity implements ISideNavigationCallback {
     private SideNavigationView sideNavigationView;
@@ -167,6 +139,20 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         {
             Intent i = new Intent(PreMemberHome.this, help.class);
 
+            PreMemberHome.this.startActivity(i);
+
+        }
+        catch(Exception ex)
+        {
+
+        }
+    }
+    public void Search(View v)
+    {
+        try
+        {
+            Intent i = new Intent(PreMemberHome.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             PreMemberHome.this.startActivity(i);
 
         }

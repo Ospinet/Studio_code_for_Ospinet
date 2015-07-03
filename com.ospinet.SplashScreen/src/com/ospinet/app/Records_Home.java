@@ -583,8 +583,8 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
             public boolean onQueryTextChange(String newText) {
                 // TODO Auto-generated method stub
 
-                flag = 2;
-                new Loadrecord().execute();
+             //   flag = 2;
+             //   new Loadrecord().execute();
                 //	Toast.makeText(getBaseContext(), newText,
                 //Toast.LENGTH_SHORT).show();
                 return false;

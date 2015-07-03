@@ -46,7 +46,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
     private SearchView search;
     private SideNavigationView sideNavigationView;
     String memid;
-    String user_id;
     ArrayList<record> arrrecords;
     public static RecordAdapter rad;
     ProgressDialog dialog;
@@ -55,6 +54,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
     Button btnNew;
 
     public static String strQuery;
+    public static String recMemid;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,7 +68,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
         sideNavigationView.setMode(Mode.LEFT);
         dialog = new ProgressDialog(getActivity());
         //memid = getActivity().getIntent().getStringExtra("member_id");
-        user_id = getActivity().getIntent().getStringExtra("userid");
         txtNoRec = (TextView) rootView.findViewById(R.id.txt_home_norec);
         btnNew= (Button) rootView.findViewById(R.id.btnNewAdd);
         txtNoRec.setVisibility(View.GONE);
@@ -128,7 +127,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 i.putExtra("EXIT", true);
                 i.putExtra("member_id",memid);
                 getActivity().startActivity(i);
-
             }
 
         }
@@ -327,7 +325,10 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
             String retstring = "";
             try {
                 ArrayList<NameValuePair> allrecords = new ArrayList<NameValuePair>();
-                allrecords.add(new BasicNameValuePair("userid",user_id));
+                SharedPreferences myPrefs = getActivity()
+                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String userId = myPrefs.getString("userid", null);
+                allrecords.add(new BasicNameValuePair("user_id",userId));
                 String response = CustomHttpClient
                         .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/get_all_records",
                                 allrecords);
@@ -355,34 +356,30 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 int flag=0;
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("member_records");
-                for (int i = 0; i < jsonMainNode.length(); i++) {
-                    if(i!=0)
-                    {
-                        JSONArray jArray = jsonMainNode.getJSONArray(i);
-                        for(int j=0;j<jArray.length();j++)
-                        {
-                            JSONObject jsonChildNode = jArray.getJSONObject(j);
-                            id = jsonChildNode.optString("id");
-                            Description = jsonChildNode.optString("description");
-                            Title =  jsonChildNode.optString("title");
-                            Date =  jsonChildNode.optString("date");
-                            Tag = jsonChildNode.optString("tagname");
-                            AttachmentPath = jsonChildNode.optString("filename");
-                            record r = new record();
-                            r.setdescription(Description);
-                            r.setattachment_path(AttachmentPath);
-                            r.setid(id);
-                            r.setrecord_date(Date);
-                            r.settag(Tag);
-                            r.settitle(Title);
-                            arrrecords.add(r);
-                            flag=1;
-                        }
-                    }
-                    else
-                    {
+                if(jsonMainNode!=null)
+                {
+                    for (int i = 0; i < jsonMainNode.length(); i++) {
+
+
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+                        id = jsonChildNode.optString("id");
+                        recMemid = jsonChildNode.optString("member_id");
+                        Description = jsonChildNode.optString("description");
+                        Title =  jsonChildNode.optString("title");
+                        Date =  jsonChildNode.optString("date");
+                        Tag = jsonChildNode.optString("tagname");
+                        AttachmentPath = jsonChildNode.optString("filename");
+                        record r = new record();
+                        r.setdescription(Description);
+                        r.setattachment_path(AttachmentPath);
+                        r.setid(id);
+                        r.setrecord_date(Date);
+                        r.settag(Tag);
+                        r.settitle(Title);
+                        arrrecords.add(r);
+                        flag=1;
                     }
+
                     if(flag==0)
                     {
                         txtNoRec.setVisibility(View.VISIBLE);
@@ -395,28 +392,12 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         btnNew.setVisibility(View.GONE);
                         recordList.setVisibility(View.VISIBLE);
                     }
-					/*id = jsonChildNode.optString("id");
-					fname = jsonChildNode.optString("fname");
-					lname = jsonChildNode.optString("lname");
-					gender = jsonChildNode.optString("gender");
-					age = jsonChildNode.optString("age");
-					email = jsonChildNode.optString("email");
-
-					// code to set text and button
-					edtFname.setText(fname);
-					edtLname.setText(lname);
-					edtEmail.setText(email);
-					edtAge.setText(age);
-					if (gender.toLowerCase().equals("male")) {
-						btnMale.setBackgroundColor(Color.WHITE);
-						btnFemale
-								.setBackgroundResource(R.drawable.button_custom);
-
-					} else {
-						btnFemale.setBackgroundColor(Color.WHITE);
-						btnMale.setBackgroundResource(R.drawable.button_custom);
-
-					}*/
+                }
+                else
+                {
+                    txtNoRec.setVisibility(View.VISIBLE);
+                    btnNew.setVisibility(View.VISIBLE);
+                    recordList.setVisibility(View.GONE);
                 }
                 rad = new RecordAdapter(getActivity(),
                         arrrecords);
@@ -484,7 +465,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_Edit.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", memid);
+                                i.putExtra("member_id", recMemid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 
@@ -498,7 +479,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_View.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", memid);
+                                i.putExtra("member_id", recMemid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 

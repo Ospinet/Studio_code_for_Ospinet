@@ -54,7 +54,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
     Button btnNew;
 
     public static String strQuery;
-    public static String recMemid;
+    public static String Memberid;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -181,6 +181,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("result");
                 arrrecords.clear();
+
                 for (int i = 0; i < jsonMainNode.length(); i++) {
 
 
@@ -360,10 +361,9 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
 
-
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                         id = jsonChildNode.optString("id");
-                        recMemid = jsonChildNode.optString("member_id");
+                        Memberid = jsonChildNode.optString("member_id");
                         Description = jsonChildNode.optString("description");
                         Title =  jsonChildNode.optString("title");
                         Date =  jsonChildNode.optString("date");
@@ -373,6 +373,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         r.setdescription(Description);
                         r.setattachment_path(AttachmentPath);
                         r.setid(id);
+                        r.setMemberid(Memberid);
                         r.setrecord_date(Date);
                         r.settag(Tag);
                         r.settitle(Title);
@@ -465,7 +466,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_Edit.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", recMemid);
+                                i.putExtra("member_id", Memberid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 
@@ -479,7 +480,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_View.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", recMemid);
+                                i.putExtra("member_id", Memberid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 

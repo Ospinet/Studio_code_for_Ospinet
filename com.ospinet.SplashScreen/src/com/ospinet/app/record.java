@@ -5,6 +5,7 @@ public class record {
 
 	private String title;
 	private String id;
+    private String Memberid;
 	private String description;
 	private String record_date;
 	private String tag;
@@ -26,6 +27,13 @@ public class record {
     }
     public void setid(String id) {
         this.id = id;
+    }
+
+    public String getMemberid() {
+        return Memberid;
+    }
+    public void setMemberid(String Memberid) {
+        this.Memberid = Memberid;
     }
 
     public String getdescription() {

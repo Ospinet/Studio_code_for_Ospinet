@@ -42,7 +42,39 @@
             android:textSize="20dp"
             android:textStyle="bold" >
         </TextView>
-
+  <TextView
+            android:id="@+id/txtMemID"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" >
+        </TextView>
+        <TextView
+            android:id="@+id/txtFname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" >
+        </TextView>
+        <TextView
+            android:id="@+id/txtLname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" >
+        </TextView>
         <TextView
             android:id="@+id/txtDate"
             android:layout_width="wrap_content"

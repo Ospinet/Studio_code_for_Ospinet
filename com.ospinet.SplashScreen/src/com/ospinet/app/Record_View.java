@@ -66,6 +66,8 @@ public class Record_View extends SherlockActivity implements ISideNavigationCall
 
 		recId = getIntent().getStringExtra("record_id");
 		memid = getIntent().getStringExtra("member_id");
+        System.out.println(recId);
+        System.out.println(memid);
 		dialog = new ProgressDialog(Record_View.this);
 		edtTitle = (EditText) findViewById(R.id.edtTitle);
 		edtTags = (EditText) findViewById(R.id.edtTags);
@@ -96,7 +98,7 @@ public class Record_View extends SherlockActivity implements ISideNavigationCall
 						.executeHttpGet("http://ospinet.com/app_ws/android_app_fun/get_members_details?member_id="
 								+ memid);
 				retstring = response.toString();
-
+                System.out.println(retstring);
 			} catch (Exception io) {
 
 			}

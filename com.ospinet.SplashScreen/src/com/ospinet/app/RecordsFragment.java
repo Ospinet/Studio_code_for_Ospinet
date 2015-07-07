@@ -54,7 +54,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
     Button btnNew;
 
     public static String strQuery;
-    public static String Memberid;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -181,7 +181,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("result");
                 arrrecords.clear();
-
                 for (int i = 0; i < jsonMainNode.length(); i++) {
 
 
@@ -201,9 +200,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                     r.settitle(Title);
                     arrrecords.add(r);
                     flag=1;
-
-
-
 
                 }
                 /*txtNoRec.setVisibility(View.GONE);
@@ -352,18 +348,19 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 String Date ="";
                 String Title ="";
                 String Tag = "";
+                String member_id = "";
                 String AttachmentPath = "";
                 jsonResponse = new JSONObject(retstring);
                 int flag=0;
-                JSONArray jsonMainNode = jsonResponse
-                        .optJSONArray("member_records");
+                JSONArray jsonMainNode = jsonResponse.optJSONArray("member_records");
                 if(jsonMainNode!=null)
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
 
+
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                         id = jsonChildNode.optString("id");
-                        Memberid = jsonChildNode.optString("member_id");
+                        member_id = jsonChildNode.optString("member_id");
                         Description = jsonChildNode.optString("description");
                         Title =  jsonChildNode.optString("title");
                         Date =  jsonChildNode.optString("date");
@@ -373,10 +370,10 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         r.setdescription(Description);
                         r.setattachment_path(AttachmentPath);
                         r.setid(id);
-                        r.setMemberid(Memberid);
                         r.setrecord_date(Date);
                         r.settag(Tag);
                         r.settitle(Title);
+                        r.setmember_id(member_id);
                         arrrecords.add(r);
                         flag=1;
                     }
@@ -405,28 +402,66 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
 
                 recordList.setAdapter(rad);
                 recordList.setOnItemClickListener(new OnItemClickListener() {
-
                     @Override
+                    public void onItemClick(AdapterView<?> arg0, View arg1,
+                                            int arg2, long arg3) {
+                        TextView txtId = (TextView) arg1.findViewById(R.id.txtId);
+                        TextView txtMemID = (TextView) arg1.findViewById(R.id.txtMemID);
+                        TextView txtDescription = (TextView) arg1.findViewById(R.id.txtDescription);
+                        TextView txtDate = (TextView) arg1.findViewById(R.id.txtDate);
+                        TextView txtTitle = (TextView) arg1.findViewById(R.id.txtTitle);
+                        TextView txtTag = (TextView) arg1.findViewById(R.id.txtTag);
+                        TextView txtFname = (TextView) arg1.findViewById(R.id.txtFname);
+                        TextView txtLname = (TextView) arg1.findViewById(R.id.txtLname);
+
+                        final String recId = txtId.getText().toString();
+                        final String recMemid = txtMemID.getText().toString();
+                        final String recDesc = txtDescription.getText().toString();
+                        final String recDate = txtDate.getText().toString();
+                        final String recTitle = txtTitle.getText().toString();
+                        final String recTag = txtTag.getText().toString();
+                        final String recFname = txtFname.getText().toString();
+                        final String recLname = txtLname.getText().toString();
+                        final Dialog builder = new Dialog(getActivity());
+
+                        Intent i = new Intent(getActivity(), Record_Details.class);
+                        i.putExtra("record_id", recId);
+                        i.putExtra("member_id", recMemid);
+                        i.putExtra("record_desc", recDesc);
+                        i.putExtra("record_date", recDate);
+                        i.putExtra("record_title", recTitle);
+                        i.putExtra("record_tag", recTag);
+                        i.putExtra("member_fname", recFname);
+                        i.putExtra("member_lname", recLname);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.putExtra("EXIT", true);
+                        builder.show();
+                        getActivity().startActivity(i);
+
+                /*    @Override
                     public void onItemClick(AdapterView<?> arg0, View arg1,
                                             int arg2, long arg3) {
                         TextView txtId = (TextView) arg1
                                 .findViewById(R.id.txtId);
+                        TextView txtMemID = (TextView) arg1
+                                .findViewById(R.id.txtMemID);
                         final String recId = txtId.getText().toString();
+                        final String recMemid = txtMemID.getText().toString();
                         final Dialog builder = new Dialog(getActivity());
 
                         final View view = getActivity().getLayoutInflater().inflate(
                                 R.layout.record_options, null);
-                        builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                        builder.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                        builder.setContentView(view);
-                        Button btnDelete = (Button) builder.findViewById(R.id.btn_Delete);
-                        Button btnEdit = (Button) builder.findViewById(R.id.btn_Edit);
-                        Button btnView = (Button) builder.findViewById(R.id.btn_view);
+                   //     builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                   //     builder.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                   //     builder.setContentView(view);
+                   //     Button btnDelete = (Button) builder.findViewById(R.id.btn_Delete);
+                   //     Button btnEdit = (Button) builder.findViewById(R.id.btn_Edit);
+                   //     Button btnView = (Button) builder.findViewById(R.id.btn_view);
 
                         builder.show();
 
 
-                        btnDelete.setOnClickListener(new OnClickListener() {
+                 /*       btnDelete.setOnClickListener(new OnClickListener() {
 
                             @Override
                             public void onClick(View v) {
@@ -466,7 +501,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_Edit.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", Memberid);
+                                i.putExtra("member_id", recMemid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 
@@ -480,14 +515,14 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                             public void onClick(View v) {
                                 Intent i = new Intent(getActivity(), Record_View.class);
                                 i.putExtra("record_id", recId);
-                                i.putExtra("member_id", Memberid);
+                                i.putExtra("member_id", recMemid);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 i.putExtra("EXIT", true);
 
                                 getActivity().startActivity(i);
 
                             }
-                        });
+                        });*/
 
                     }
 
@@ -512,18 +547,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
         actionBar.setCustomView(v);
         search=(SearchView) v.findViewById(R.id.search);
         search.setQueryHint("Search");
-
-        //*** setOnQueryTextFocusChangeListener ***
-        search.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                // TODO Auto-generated method stub
-
-                Toast.makeText(getActivity(), String.valueOf(hasFocus),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //*** setOnQueryTextListener ***
         search.setOnQueryTextListener(new OnQueryTextListener() {

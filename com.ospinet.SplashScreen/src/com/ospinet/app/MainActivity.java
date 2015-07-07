@@ -10,8 +10,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import android.support.v4.view.ViewPager;
 
 
-public class MainActivity extends SherlockFragmentActivity implements
-		ActionBar.TabListener {
+public class MainActivity extends SherlockFragmentActivity implements ActionBar.TabListener {
 
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;

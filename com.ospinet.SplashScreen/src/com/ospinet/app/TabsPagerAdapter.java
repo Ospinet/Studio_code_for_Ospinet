@@ -19,7 +19,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 			return new RecordsFragment();
 		case 1:
 			// Games fragment activity
-			return new contactsFragment();
+			return new ContactsFragment();
 		case 2:
 			// Movies fragment activity
 			return new FilesFragment();

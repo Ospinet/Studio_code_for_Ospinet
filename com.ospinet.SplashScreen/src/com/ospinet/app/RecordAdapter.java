@@ -72,8 +72,8 @@ public class RecordAdapter extends BaseAdapter {
         holder.txtTag.setText(recordArrayList.get(position).gettag());
         holder.txtAttachmentPath.setText(recordArrayList.get(position).getattachment_path());
         holder.txtMemID.setText(recordArrayList.get(position).getmember_id());
-        holder.txtFname = (TextView) convertView.findViewById(R.id.txtFname);
-        holder.txtLname = (TextView) convertView.findViewById(R.id.txtLname);
+        holder.txtFname.setText(recordArrayList.get(position).getFname());
+        holder.txtLname.setText(recordArrayList.get(position).getLname());
         return convertView;
 
     }

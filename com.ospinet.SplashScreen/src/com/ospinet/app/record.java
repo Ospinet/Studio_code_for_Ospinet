@@ -10,6 +10,20 @@ public class record {
     private String tag;
     private String attachment_path;
     private String member_id;
+    public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	private String fname;
+    private String lname;
     public record() {
 
     }

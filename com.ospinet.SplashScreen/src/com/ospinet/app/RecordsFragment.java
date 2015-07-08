@@ -350,6 +350,8 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 String Tag = "";
                 String member_id = "";
                 String AttachmentPath = "";
+                String fname ="";
+                String lname="";
                 jsonResponse = new JSONObject(retstring);
                 int flag=0;
                 JSONArray jsonMainNode = jsonResponse.optJSONArray("member_records");
@@ -366,6 +368,8 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         Date =  jsonChildNode.optString("date");
                         Tag = jsonChildNode.optString("tagname");
                         AttachmentPath = jsonChildNode.optString("filename");
+                        fname = jsonChildNode.optString("fname");
+                        lname = jsonChildNode.optString("lname");
                         record r = new record();
                         r.setdescription(Description);
                         r.setattachment_path(AttachmentPath);
@@ -374,6 +378,8 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         r.settag(Tag);
                         r.settitle(Title);
                         r.setmember_id(member_id);
+                        r.setFname(fname);
+                        r.setLname(lname);
                         arrrecords.add(r);
                         flag=1;
                     }
@@ -433,7 +439,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         i.putExtra("record_tag", recTag);
                         i.putExtra("member_fname", recFname);
                         i.putExtra("member_lname", recLname);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                       // i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         i.putExtra("EXIT", true);
                         builder.show();
                         getActivity().startActivity(i);

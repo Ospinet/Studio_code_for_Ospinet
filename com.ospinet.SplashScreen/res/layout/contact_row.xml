@@ -20,12 +20,24 @@
             android:layout_centerVertical="true"/>
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/txtFname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
-            android:paddingTop="5dp"
+            android:paddingTop="15dp"
+            android:textColor="#000000"
+            android:textSize="18dp">
+        </TextView>
+        
+        <TextView
+            android:id="@+id/txtLname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:layout_toRightOf="@+id/txtFname"
             android:textColor="#000000"
             android:textSize="18dp">
         </TextView>
@@ -46,10 +58,10 @@
             android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtTitle"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
-            android:paddingTop="5dp"
+            android:paddingTop="15dp"
+            android:layout_below="@+id/txtFname"
             android:textColor="#000000"
             android:textSize="17dp">
         </TextView>

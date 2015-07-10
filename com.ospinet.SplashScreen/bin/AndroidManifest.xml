@@ -32,7 +32,9 @@
             <activity android:name="com.ospinet.app.Record_View" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.RecordActivity" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.help" android:screenOrientation="portrait" ></activity>
-             <activity android:name="com.ospinet.app.PreMemberHome" android:screenOrientation="portrait" ></activity>
+            <activity android:name="com.ospinet.app.Record_Details" android:screenOrientation="portrait" ></activity>
+            <activity android:name="com.ospinet.app.PreMemberHome" android:screenOrientation="portrait" ></activity>
+            <activity android:name=".MainActivity" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.login_2" android:screenOrientation="portrait" android:noHistory="true">
                  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

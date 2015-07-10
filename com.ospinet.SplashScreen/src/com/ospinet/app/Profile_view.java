@@ -51,7 +51,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
         String gender = myPrefs.getString("gender", null);
         Character First = fname.charAt(0);
         Character Last = lname.charAt(0);
-        TextNameLetters.setText(First + Last);
+        TextNameLetters.setText(""+ First + Last);
         txtName.setText(fname +" " + lname);
         txtDOB.setText(age);
         txtEmail.setText(email);
@@ -128,7 +128,8 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     actionBar.setDisplayShowTitleEnabled(false);
     actionBar.setCustomView(v);
     ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
-    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);	
+    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
+        imgAdd.setVisibility(View.INVISIBLE);
     imgAdd.setOnClickListener(new OnClickListener() {
 
     	@Override

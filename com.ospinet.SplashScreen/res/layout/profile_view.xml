@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEFF2"
+    android:id="@+id/rel" >
+
+    <com.devspark.sidenavigation.SideNavigationView
+        android:id="@+id/side_navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="2"
+        android:id="@+id/lin"
+        android:orientation="vertical">
+
+        <RelativeLayout android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/header"
+            android:background="#1BA0A2">
+
+        <RelativeLayout
+            android:id="@+id/linGender"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_above="@+id/txtEmail"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/TextNameLetters"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="  TD"
+                android:textColor="#1ba0a2"
+                android:textSize="35dp"
+                android:paddingRight="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="33dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtName"
+                android:text="login_user"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="114dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgVerified"
+                android:clickable="true"
+                android:background="@drawable/tick"
+                android:layout_alignTop="@+id/txtName"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="42dp" />
+        </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmail"
+                android:text="User email id"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/imgVerifiedOne"
+                android:layout_marginBottom="89dp"
+                android:layout_alignLeft="@+id/txtGender" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgVerifiedOne"
+                android:clickable="true"
+                android:background="@drawable/tick"
+                android:layout_marginRight="45dp"
+                android:layout_alignTop="@+id/txtEmail"
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtGender"
+                android:text="Gender"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="46dp"
+                android:layout_below="@+id/imgVerifiedOne"
+                android:layout_alignParentLeft="true"
+                android:paddingTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDOB"
+                android:text="DOB"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/txtGender"
+                android:layout_alignLeft="@+id/txtGender"
+                android:paddingTop="15dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/relbuttons">
+
+            <Button
+                android:id="@+id/btnpwd"
+                style="@drawable/button_custom"
+                android:layout_width="fill_parent"
+                android:layout_height="41dp"
+                android:background="@drawable/button_custom_two"
+                android:text="        Change Password"
+                android:textColor="#FFFFFF"
+                android:layout_below="@+id/editDescription"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:gravity="left" />
+
+         </RelativeLayout>
+        </LinearLayout>
+</RelativeLayout>

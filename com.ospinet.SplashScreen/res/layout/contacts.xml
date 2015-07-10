@@ -68,7 +68,7 @@
                     android:padding="10dp"
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
-                    android:onClick="new_record"
+
                     android:text="New Record"
                android:layout_alignLeft="@+id/txt_home_norec"
                android:layout_alignRight="@+id/txt_home_norec">

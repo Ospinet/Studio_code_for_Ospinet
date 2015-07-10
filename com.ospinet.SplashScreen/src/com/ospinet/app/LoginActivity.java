@@ -154,6 +154,8 @@ public class LoginActivity extends Activity {
                     String roleid = jsonChildNode.optString("roleid");
                     String profile_pic = jsonChildNode.optString("profile_pic");
                     String type = jsonChildNode.optString("type");
+                    String gender = jsonChildNode.optString("gender");
+                    String age = jsonChildNode.optString("age");
 
                     // Log.d("msg",msg);
                     if (msg.equals("1")) {
@@ -175,6 +177,8 @@ public class LoginActivity extends Activity {
                         prefsEditor.putString("roleid", roleid);
                         prefsEditor.putString("type", type);
                         prefsEditor.putString("profile_pic", profile_pic);
+                        prefsEditor.putString("gender", gender);
+                        prefsEditor.putString("age", age);
                         prefsEditor.commit();
                         loginmsg = "Login successful";
                         Intent intent = new Intent(LoginActivity.this, PreMemberHome.class);

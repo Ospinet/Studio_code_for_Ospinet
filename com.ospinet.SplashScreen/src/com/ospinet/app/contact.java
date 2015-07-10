@@ -25,7 +25,7 @@ public class contact {
     public String getfriend_id() {
         return friend_id;
     }
-    public void setfriend_id(String member_id) {
+    public void setfriend_id(String friend_id) {
         this.friend_id = friend_id;
     }
 

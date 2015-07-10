@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.androidquery.AQuery;
@@ -159,6 +160,19 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         catch(Exception ex)
         {
 
+        }
+    }
+    public void Profile(View v)
+    {
+        try
+        {
+            Intent intent = new Intent(PreMemberHome.this, Profile_view.class);
+            PreMemberHome.this.startActivity(intent);
+
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error");
         }
     }
     private void showActionBar() {

@@ -1361,7 +1361,7 @@ containing a value of this type.
         public static final int member_edit=0x7f030027;
         public static final int member_layout=0x7f030028;
         public static final int member_options=0x7f030029;
-        public static final int member_view=0x7f03002a;
+        public static final int member_view =0x7f03002a;
         public static final int menu1=0x7f03002b;
         public static final int menu2=0x7f03002c;
         public static final int menu3=0x7f03002d;

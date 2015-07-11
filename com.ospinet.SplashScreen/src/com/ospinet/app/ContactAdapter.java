@@ -57,6 +57,7 @@ public class ContactAdapter extends BaseAdapter {
         }
 
         holder.txtFname.setText(contactArrayList.get(position).getFname());
+        holder.txtLname.setText(contactArrayList.get(position).getLname());
         holder.txtFriendId.setText(contactArrayList.get(position).getfriend_id());
         holder.txtEmail.setText(contactArrayList.get(position).getemail());
         return convertView;

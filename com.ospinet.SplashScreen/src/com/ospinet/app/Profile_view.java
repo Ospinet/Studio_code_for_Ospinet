@@ -24,6 +24,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
 	private SideNavigationView sideNavigationView;
     TextView TextNameLetters, txtName, txtEmail, txtGender, txtDOB;
     Button Change_password;
+    public static String user_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -44,6 +45,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
         Change_password = (Button) findViewById(R.id.btnpwd);
 
         SharedPreferences myPrefs = Profile_view.this.getSharedPreferences("remember", MODE_PRIVATE);
+        user_id = myPrefs.getString("userid", null);
         String email = myPrefs.getString("email", null);
         String fname = myPrefs.getString("fname", null);
         String lname = myPrefs.getString("lname", null);
@@ -65,20 +67,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
             }
         });
 
-        Send.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Validation val = new Validation();
-                if(val.Is_Valid_Email(edtEmail) && !Description.getText().toString().trim().equals(""))
-                {
-                    Toast.makeText(Profile_view.this, "Problem in network.. Try after some time", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    Toast.makeText(Profile_view.this, "Please enter your email address and Problem", Toast.LENGTH_LONG).show();
-                }
-            }
-        });*/
+  */
     }
     public void onBackPressed() {
         Intent i = new Intent(Profile_view.this, PreMemberHome.class);
@@ -120,45 +109,31 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     private void showActionBar() {
         LayoutInflater inflator = (LayoutInflater) this
             .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    View v = inflator.inflate(R.layout.menu1, null);
+    View v = inflator.inflate(R.layout.menu4, null);
     com.actionbarsherlock.app.ActionBar actionBar = getSupportActionBar();
     actionBar.setDisplayHomeAsUpEnabled(false);
     actionBar.setDisplayShowHomeEnabled (false);
     actionBar.setDisplayShowCustomEnabled(true);
     actionBar.setDisplayShowTitleEnabled(false);
     actionBar.setCustomView(v);
-    ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
-    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
-        imgAdd.setVisibility(View.INVISIBLE);
-    imgAdd.setOnClickListener(new OnClickListener() {
-
-    	@Override
-    	public void onClick(View v) {
-    		// TODO Auto-generated method stub
-    		Intent intent = new Intent(Profile_view.this, MemberActivity.class);
-    		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    		intent.putExtra("EXIT", true);
-    		Profile_view.this.startActivity(intent);
-            
-    	}
-    });
-    imgMenu.setOnClickListener(new OnClickListener() {
-    	
-    	@Override
-    	public void onClick(View v) {
-    		// TODO Auto-generated method stub
-    		 sideNavigationView.toggleMenu();
-    		 RelativeLayout rel = (RelativeLayout) findViewById(R.id.rel);
-             rel.bringChildToFront(sideNavigationView);
-            
-    	}
-    });
-
     ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
     TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
+    TextView txtEdit = (TextView) v.findViewById(R.id.txtEdit);
 
+        txtEdit.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Profile_view.this, Profile_Edit.class);
+                i.putExtra("member_id", user_id);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Profile_view.this.startActivity(i);
+
+            }
+        });
     imgLogo.setOnClickListener(new OnClickListener() {
-    	
+
     	@Override
     	public void onClick(View v) {
     		// TODO Auto-generated method stub
@@ -168,7 +143,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     	}
     });
     txtLogoName.setOnClickListener(new OnClickListener() {
-    	
+
     	@Override
     	public void onClick(View v) {
     		// TODO Auto-generated method stub

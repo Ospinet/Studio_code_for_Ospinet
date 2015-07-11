@@ -104,13 +104,21 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                 dialog.dismiss();
             JSONObject jsonResponse = null;
             try {
-                String Id="";
-                String File_Name = "";
-                String Member_id ="";
-                String First_Name ="";
-                String Last_Name ="";
-            //    ArrayList<record> records;
-                jsonResponse = new JSONObject(retstring);
+                String file_id="";
+                String file_name="";
+                String file_member_id="";
+            	String fname ="";
+            	String lname="";
+            	String record_id = "";
+				String member_id = "";
+				String title = "";
+				String description = "";
+				String date = "";
+				String tagid = "";
+				String tagname = "";
+				String filename = "";
+
+				jsonResponse = new JSONObject(retstring);
                 int flag=0;
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("result");
@@ -118,20 +126,66 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
 
-                        JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
-                        Id = jsonChildNode.optString("id");
-                        File_Name = jsonChildNode.optString("file_name");
-                        First_Name = jsonChildNode.optString("fname");
-                        Last_Name = jsonChildNode.optString("lname");
-                        Member_id =  jsonChildNode.optString("member_id");
-                        file r = new file();
-                        r.setid(Id);
-                        r.setFname(First_Name);
-                        r.setLname(Last_Name);
-                        r.setmember_id(Member_id);
-                        r.setfile_name(File_Name);
-                        arrfiles.add(r);
-                        flag=1;
+                    	JSONArray jsonChildArray = jsonMainNode.getJSONArray(i);
+                    	if(jsonChildArray != null)
+                    	{
+                    		for(int j =0;j<jsonChildArray.length();j++)
+                    		{
+                    			JSONObject jsonChildObject = jsonChildArray.getJSONObject(j);
+                    			if(jsonChildObject!=null)
+                    			{
+                                    file_id = jsonChildObject.optString("id");
+                                    file_name = jsonChildObject.optString("file_name");
+                                    file_member_id = jsonChildObject.optString("member_id");
+                    				fname = jsonChildObject.optString("fname");
+                    				lname = jsonChildObject.optString("lname");
+                    			JSONArray jsonRecordArray = jsonChildObject
+                                         .optJSONArray("record");
+                    				if(jsonRecordArray!=null)
+                    				{
+                    					for(int k=0;k<jsonRecordArray.length();k++)
+                    					{
+                    						JSONArray jsonChildRecordArray = jsonRecordArray.getJSONArray(k);
+                    						if(jsonChildRecordArray!=null)
+                    						{
+                    							for(int m =0;m<jsonChildRecordArray.length();m++)
+                    							{
+                    								JSONObject recordObj = jsonChildRecordArray.getJSONObject(m);
+                                                    record_id = recordObj.optString("id");
+                    								 member_id = recordObj.optString("member_id");
+                    								 title = recordObj.optString("title");
+                    								 description = recordObj.optString("description");
+                    								 date = recordObj.optString("date");
+                    								 tagid = recordObj.optString("tagid");
+                    								 tagname = recordObj.optString("tagname");
+                    								 filename = recordObj.optString("filename");
+                    								 file r = new file();
+                    			                        r.setId(record_id);
+                    			                        r.setFname(fname);
+                    			                        r.setLname(lname);
+                    			                        r.setMember_id(member_id);
+                    			                        r.setTitle(title);
+                    			                        r.setDescription(description);
+                    			                        r.setDate(date);
+                    			                        r.setTagid(tagid);
+                    			                        r.setTagname(tagname);
+                    			                        r.setFilename(filename);
+                                                        r.setFile_name(file_name);
+                                                        r.setFile_id(file_id);
+                                                        r.setFile_member_id(file_member_id);
+                    			                        arrfiles.add(r);
+                    			                        flag=1;
+
+                    							}
+                    								
+                    						}
+                    					}
+                    				}
+                    			}
+                    			 
+                    		}
+                    	}
+                    	
                     }
 
                     if(flag==0)

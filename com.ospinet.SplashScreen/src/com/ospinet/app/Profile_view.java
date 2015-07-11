@@ -118,6 +118,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     actionBar.setCustomView(v);
     ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
     TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
+    ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
     TextView txtEdit = (TextView) v.findViewById(R.id.txtEdit);
 
         txtEdit.setOnClickListener(new OnClickListener() {
@@ -152,6 +153,17 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     		startActivity(i);
     	}
     });
+        imgMenu.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                sideNavigationView.toggleMenu();
+                RelativeLayout rel = (RelativeLayout) findViewById(R.id.rel);
+                rel.bringChildToFront(sideNavigationView);
+
+            }
+        });
 
 
 

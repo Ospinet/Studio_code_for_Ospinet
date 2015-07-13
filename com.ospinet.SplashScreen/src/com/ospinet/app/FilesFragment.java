@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -42,6 +44,7 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
     Button btnNew;
 
     public static String strQuery;
+    public static String file_id="";
 
 
     @Override
@@ -104,7 +107,6 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                 dialog.dismiss();
             JSONObject jsonResponse = null;
             try {
-                String file_id="";
                 String file_name="";
                 String file_member_id="";
             	String fname ="";
@@ -139,7 +141,25 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                                     file_member_id = jsonChildObject.optString("member_id");
                     				fname = jsonChildObject.optString("fname");
                     				lname = jsonChildObject.optString("lname");
-                    			JSONArray jsonRecordArray = jsonChildObject
+                    				
+                    				file r = new file();
+			                        r.setFname(fname);
+			                        r.setLname(lname);
+			                        r.setMember_id(member_id);
+			                        r.setFile_name(file_name);
+                                    r.setFile_id(file_id);
+                                    r.setFile_member_id(file_member_id);
+			                        arrfiles.add(r);
+			                        flag=1;
+                    			}
+                    		}
+			                        SharedPreferences myPrefs = getActivity()
+											.getSharedPreferences("remember", Context.MODE_PRIVATE);
+									SharedPreferences.Editor prefsEditor = myPrefs.edit();
+									
+									prefsEditor.putString("file_response", retstring);
+									prefsEditor.commit();
+/*                    			JSONArray jsonRecordArray = jsonChildObject
                                          .optJSONArray("record");
                     				if(jsonRecordArray!=null)
                     				{
@@ -180,13 +200,11 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                     								
                     						}
                     					}
-                    				}
-                    			}
+                    				}*/
+                    			
                     			 
                     		}
                     	}
-                    	
-                    }
 
                     if(flag==0)
                     {
@@ -211,6 +229,26 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
                         arrfiles);
 
                 filesList.setAdapter(rad);
+                filesList.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
+						// TODO Auto-generated method stub
+						 TextView txtFile_id = (TextView) view.findViewById(R.id.txtFile_id);
+						 SharedPreferences myPrefs = getActivity()
+									.getSharedPreferences("remember", Context.MODE_PRIVATE);
+							SharedPreferences.Editor prefsEditor = myPrefs.edit();
+							
+							prefsEditor.putString("file_id", txtFile_id.getText().toString());
+							prefsEditor.commit();
+
+                        Intent i = new Intent(getActivity(), File_records_list.class);
+                        i.putExtra("file_id", file_id);
+
+                        getActivity().startActivity(i);
+					}
+				});
          /*       contactList.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> arg0, View arg1,

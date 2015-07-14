@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -61,6 +62,11 @@ public class MainActivity extends SherlockFragmentActivity implements ActionBar.
 			}
 		});
 	}
+    public void onBackPressed() {
+        Intent i = new Intent(MainActivity.this, PreMemberHome.class);
+        this.startActivity(i);
+        finish();
+    }
 
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {

@@ -16,10 +16,10 @@ public class ShareTabsPagerAdapter extends FragmentPagerAdapter {
 		switch (index) {
 		case 0:
 			// Top Rated fragment activity
-			return new RecordsFragment();
+			return new ShareRecordsFragment();
 		case 1:
 			// Games fragment activity
-			return new ContactsFragment();
+			return new ShareFilesFragment();
 		}
 
 		return null;
@@ -28,7 +28,7 @@ public class ShareTabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// get item count - equal to number of tabs
-		return 3;
+		return 2;
 	}
 
 }

@@ -175,6 +175,20 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
             System.out.println("Error");
         }
     }
+    public void Share(View v)
+    {
+        try
+        {
+            Intent i = new Intent(PreMemberHome.this, ShareMainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            PreMemberHome.this.startActivity(i);
+
+        }
+        catch(Exception ex)
+        {
+
+        }
+    }
     private void showActionBar() {
         LayoutInflater inflator = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);

@@ -123,7 +123,6 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
 
-
                         JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
                         id = jsonChildNode.optString("id");
                         member_id = jsonChildNode.optString("member_id");
@@ -194,7 +193,7 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
                         final String recLname = txtLname.getText().toString();
                         final Dialog builder = new Dialog(getActivity());
 
-                        Intent i = new Intent(getActivity(), Record_Details.class);
+                        Intent i = new Intent(getActivity(), Share.class);
                         i.putExtra("record_id", recId);
                         i.putExtra("member_id", recMemid);
                         i.putExtra("record_desc", recDesc);

@@ -30,10 +30,8 @@
     <RelativeLayout android:id="@+id/relTo"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,36 +41,33 @@
             android:id="@+id/textTo"
             android:layout_alignBottom="@+id/ToEmail" />
 
-<EditText
-    android:id="@+id/ToEmail"
-    android:fontFamily="Walkway-light"
-    android:textColorHint="#ffb8c6c8"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="5dp"
-    android:paddingTop="5dp"
-    android:ems="10"
-    android:textColor="#000000"
-    android:hint="Your Friend's Email id"
-    android:textSize="15sp"
-    android:inputType="textEmailAddress"
-    android:autoText="true"
-    android:focusable="@bool/abs__action_bar_expanded_action_views_exclusive"
-    android:editable="@bool/abs__action_bar_embed_tabs"
-    android:layout_marginTop="28dp"
-    android:layout_toLeftOf="@+id/btnMale"
-    android:layout_toRightOf="@+id/textTo"
-    android:layout_marginLeft="25dp" />
+        <EditText
+            android:id="@+id/ToEmail"
+            android:textColorHint="#ffb8c6c8"
+            android:fontFamily="Walkway-light"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:textSize="15dp"
+            android:background="@drawable/edt_selector"
+            android:hint="Your Friend's Email id"
+            android:singleLine="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:layout_toLeftOf="@+id/btnMale"
+            android:layout_toRightOf="@+id/textTo"
+            android:layout_marginLeft="26dp" />
 
         <ImageView
             android:id="@+id/btnMale"
             android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:background="@drawable/contacts_2"
-            android:onClick="maleClicked"
+            android:onClick="GetContacts"
+            android:layout_alignBottom="@+id/ToEmail"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/ToEmail"
-            android:layout_alignBottom="@+id/ToEmail" />
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp" />
 
     </RelativeLayout>
 
@@ -84,37 +79,30 @@
             android:layout_marginTop="29dp"
             android:layout_alignParentRight="true">
 
-        <EditText
-            android:id="@+id/YourEmail"
-            android:fontFamily="Walkway-light"
-            android:textColorHint="#ffb8c6c8"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:ems="10"
-            android:textColor="#000000"
-            android:hint="Your Email id"
-            android:textSize="15sp"
-            android:inputType="textEmailAddress"
-            android:autoText="true"
-            android:focusable="@bool/abs__action_bar_expanded_action_views_exclusive"
-
-            android:editable="@bool/abs__action_bar_embed_tabs"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/textFrom"
-            android:layout_marginLeft="5dp" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="From"
                 android:id="@+id/textFrom"
-                android:layout_alignBottom="@+id/YourEmail"
                 android:layout_alignParentLeft="true" />
             </RelativeLayout>
+
+        <EditText
+            android:id="@+id/YourEmail"
+            android:textColorHint="#ffb8c6c8"
+            android:fontFamily="Walkway-light"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:textSize="15dp"
+            android:background="@drawable/edt_selector"
+            android:hint="Your Email id"
+            android:singleLine="true"
+            android:layout_alignBottom="@+id/relFrom"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="48dp"
+            android:layout_alignParentRight="true"
+            android:editable="@bool/abs__action_bar_embed_tabs" />
 
     </RelativeLayout>
 
@@ -134,38 +122,6 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp" />
 
-        <RelativeLayout android:id="@+id/relbuttons"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/RecordTitle">
-
-            <Button
-                android:id="@+id/btnSend"
-                style="@drawable/button_custom"
-                android:layout_width="fill_parent"
-                android:layout_height="41dp"
-                android:background="@drawable/button_custom_two"
-                android:text="Send"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_above="@+id/btnCancel"
-                android:layout_marginBottom="10dp" />
-
-            <Button
-                android:id="@+id/btnCancel"
-                style="@drawable/button_custom"
-                android:layout_width="340dp"
-                android:layout_height="41dp"
-                android:background="@drawable/button_custom"
-                android:text="Cancel"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_marginBottom="39dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignLeft="@+id/btnSend"
-                android:layout_alignRight="@+id/btnSend" />
-
             <RelativeLayout
                 android:id="@+id/Title"
                 android:layout_width="fill_parent"
@@ -179,7 +135,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title                      -"
+                    android:text="Title                -"
                     android:id="@+id/textViewTitle"
                     android:layout_gravity="center_horizontal|left"
                     android:paddingTop="8dp"
@@ -211,7 +167,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tags                     -"
+                    android:text="Tags               -"
                     android:id="@+id/textViewTags"
                     android:paddingTop="8dp"
                     android:textColor="#79888A"
@@ -241,7 +197,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner                  -"
+                    android:text="Owner            -"
                     android:id="@+id/textViewOwner"
                     android:layout_gravity="center_horizontal|left"
                     android:paddingTop="8dp"
@@ -272,7 +228,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description         -"
+                    android:text="Description   -"
                     android:id="@+id/textViewDesc"
                     android:paddingTop="8dp"
                     android:textColor="#79888A"
@@ -302,7 +258,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date                     -"
+                    android:text="Date               -"
                     android:id="@+id/textViewDate"
                     android:paddingTop="8dp"
                     android:textColor="#79888A"
@@ -320,8 +276,39 @@
                     android:layout_toRightOf="@+id/textViewDate" />
 
             </RelativeLayout>
-
-        </RelativeLayout>
     </RelativeLayout>
+    <RelativeLayout android:id="@+id/relbuttons"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignLeft="@+id/rel_home_header1"
+        android:layout_alignRight="@+id/rel_home_header1"
+        android:layout_below="@+id/relrec">
 
+        <Button
+            android:id="@+id/btnSend"
+            style="@drawable/button_custom"
+            android:layout_width="fill_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/button_custom_two"
+            android:text="Share"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_above="@+id/btnCancel"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@drawable/button_custom"
+            android:layout_width="340dp"
+            android:layout_height="41dp"
+            android:background="@drawable/button_custom"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="39dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/btnSend"
+            android:layout_alignRight="@+id/btnSend" />
+
+    </RelativeLayout>
 </RelativeLayout>

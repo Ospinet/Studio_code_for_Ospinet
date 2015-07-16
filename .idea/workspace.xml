@@ -141,66 +141,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShareRecordsFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareRecordsFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="0" selection-start="13690" selection-end="13690" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="6409">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Share.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Share.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="66" selection-start="2561" selection-end="2561" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1343">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PreMemberHome.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/PreMemberHome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="5" selection-start="5495" selection-end="5799" vertical-scroll-proportion="0.0" vertical-offset="1183" max-vertical-offset="3859">
+            <state line="58" column="9" selection-start="2495" selection-end="2495" vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="3859">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_alphabet.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/list_alphabet.xml">
+      <file leaf-file-name="share.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/share.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="19" selection-start="937" selection-end="937" vertical-scroll-proportion="0.53258145" vertical-offset="0" max-vertical-offset="798">
+            <state line="299" column="39" selection-start="12199" selection-end="12199" vertical-scroll-proportion="6.369674" vertical-offset="0" max-vertical-offset="5423">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/contacts.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="3205" selection-end="3688" vertical-scroll-proportion="-17.592592" vertical-offset="817" max-vertical-offset="1615">
+            <state line="31" column="69" selection-start="979" selection-end="979" vertical-scroll-proportion="6.5384617" vertical-offset="561" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="row_item.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/row_item.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="ContactsFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="-8.814815" vertical-offset="0" max-vertical-offset="476">
+            <state line="40" column="35" selection-start="1347" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="6" selection-start="783" selection-end="783" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -209,20 +192,35 @@
       <file leaf-file-name="ContactsMainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="32" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4199">
+            <state line="148" column="45" selection-start="4943" selection-end="4943" vertical-scroll-proportion="7.1538463" vertical-offset="2702" max-vertical-offset="4199">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6647#6655#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listview_row.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/listview_row.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2703">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/AndroidManifest.xml">
+      <file leaf-file-name="home_new.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/home_new.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="123" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1003">
-              <folding>
-                <element signature="e#557#575#0" expanded="true" />
-                <element signature="e#729#759#0" expanded="true" />
-              </folding>
+            <state line="28" column="3" selection-start="975" selection-end="975" vertical-scroll-proportion="-17.62963" vertical-offset="0" max-vertical-offset="4131">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,8 +228,11 @@
       <file leaf-file-name="AlphabetListAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/AlphabetListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1547">
-              <folding />
+            <state line="23" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="-7.8461537" vertical-offset="51" max-vertical-offset="1581">
+              <folding>
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#815#816#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,22 +279,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareRecordAdapter.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/share_record_row.xml" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareMainActivity.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/MainActivity.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareFilesFragment.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Record_Details.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/profile_view.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/Share.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Profile_Edit.java" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareRecordsFragment.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsMainActivity.java" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/share.xml" />
-        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Share.java" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/row_item.xml" />
         <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/list_alphabet.xml" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactAdapter.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/AlphabetListAdapter.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Share.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/MainActivity.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/TabsPagerAdapter.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/LoadContactsFunction.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsFragment.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsMainActivity.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/PreMemberHome.java" />
+        <option value="$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/share.xml" />
       </list>
     </option>
   </component>
@@ -329,6 +330,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -428,7 +430,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -466,15 +467,15 @@
       <recent name="E:\Ospinet Android\Ospinet\com.ospinet.SplashScreen\src\com\ospinet\app" />
       <recent name="E:\Ospinet Android\Ospinet\com.ospinet.SplashScreen\res\layout" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ospinet.app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Tejas\Ospinet Android_studio\com.ospinet.SplashScreen\res\drawable-hdpi" />
       <recent name="D:\Tejas\Android Ospinet\Ospinet\com.ospinet.SplashScreen\res\drawable-hdpi" />
       <recent name="D:\Tejas\Android Ospinet\Ospinet\actionbarsherlock\res\drawable" />
       <recent name="D:\Tejas\Android Ospinet\Ospinet\com.ospinet.SplashScreen\libs" />
       <recent name="D:\Tejas\Android Ospinet\Ospinet\com.ospinet.SplashScreen\bin\classes\com\devspark\sidenavigation" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.ospinet.app" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.com.ospinet.SplashScreen">
@@ -719,20 +720,21 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24921875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4583822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3024619" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="239" width="1360" height="249" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32189542" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29308325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37866354" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="2" y="424" width="679" height="283" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29191092" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="2" y="424" width="679" height="283" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18382353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="496" y="70" width="287" height="835" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30128956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46776083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -740,7 +742,6 @@
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4583822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -764,72 +765,91 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/profile_edit.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="55" selection-start="1057" selection-end="1704" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="4505">
+        <state line="13" column="13" selection-start="339" selection-end="339" vertical-scroll-proportion="-0.6278788" vertical-offset="603" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="69" selection-start="979" selection-end="979" vertical-scroll-proportion="6.5384617" vertical-offset="561" max-vertical-offset="1428">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/AlphabetListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1547">
+        <state line="23" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="-7.8461537" vertical-offset="51" max-vertical-offset="1581">
+          <folding>
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="6" selection-start="783" selection-end="783" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="35" selection-start="1347" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="16" selection-start="5963" selection-end="5963" vertical-scroll-proportion="0.0" vertical-offset="1703" max-vertical-offset="2720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/os/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="16" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/os/Looper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="16" selection-start="766" selection-end="766" vertical-scroll-proportion="0.61022925" vertical-offset="62" max-vertical-offset="629">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ContactsMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4199">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="123" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1003">
-          <folding>
-            <element signature="e#557#575#0" expanded="true" />
-            <element signature="e#729#759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/ShareRecordsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="0" selection-start="13690" selection-end="13690" vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="5933">
+        <state line="148" column="45" selection-start="4943" selection-end="4943" vertical-scroll-proportion="7.1538463" vertical-offset="2702" max-vertical-offset="4199">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6647#6655#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/Share.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="66" selection-start="2561" selection-end="2561" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/home_new.xml">
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/login_2.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="44" selection-start="4790" selection-end="4790" vertical-scroll-proportion="0.3438155" vertical-offset="2420" max-vertical-offset="4131">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/login.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="477">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2635">
           <folding />
         </state>
       </provider>
@@ -844,32 +864,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/row_section.xml">
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/home_new.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
+        <state line="28" column="3" selection-start="975" selection-end="975" vertical-scroll-proportion="-17.62963" vertical-offset="0" max-vertical-offset="4131">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/contact_row.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
+        <state line="63" column="16" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.33212996" vertical-offset="870" max-vertical-offset="7565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/contacts.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/PreMemberHome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="3205" selection-end="3688" vertical-scroll-proportion="-17.592592" vertical-offset="817" max-vertical-offset="1615">
+        <state line="58" column="9" selection-start="2495" selection-end="2495" vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="3859">
           <folding />
         </state>
       </provider>
@@ -879,34 +893,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="40" selection-start="2515" selection-end="2526" vertical-scroll-proportion="0.43984962" vertical-offset="754" max-vertical-offset="5423">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/src/com/ospinet/app/PreMemberHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="5" selection-start="5495" selection-end="5799" vertical-scroll-proportion="0.0" vertical-offset="1183" max-vertical-offset="3859">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/row_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="-8.814815" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ospinet.SplashScreen/res/layout/list_alphabet.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="937" selection-end="937" vertical-scroll-proportion="0.53258145" vertical-offset="0" max-vertical-offset="798">
+        <state line="299" column="39" selection-start="12199" selection-end="12199" vertical-scroll-proportion="6.369674" vertical-offset="0" max-vertical-offset="5423">
           <folding />
         </state>
       </provider>

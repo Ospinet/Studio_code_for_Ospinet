@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class AlphabetListAdapter extends BaseAdapter {
 
     public static abstract class Row {}
-    
+
     public static final class Section extends Row {
         public final String text;
 
@@ -21,7 +21,7 @@ public class AlphabetListAdapter extends BaseAdapter {
             this.text = text;
         }
     }
-    
+
     public static final class Item extends Row {
         public final String text;
 
@@ -29,9 +29,9 @@ public class AlphabetListAdapter extends BaseAdapter {
             this.text = text;
         }
     }
-    
+
     private List<Row> rows;
-    
+
     public void setRows(List<Row> rows) {
         this.rows = rows;
     }
@@ -50,12 +50,12 @@ public class AlphabetListAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-    
+
     @Override
     public int getViewTypeCount() {
         return 2;
     }
-    
+
     @Override
     public int getItemViewType(int position) {
         if (getItem(position) instanceof Section) {
@@ -68,27 +68,27 @@ public class AlphabetListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        
+
         if (getItemViewType(position) == 0) { // Item
             if (view == null) {
                 LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view = (LinearLayout) inflater.inflate(R.layout.row_item, parent, false);  
+                view = (LinearLayout) inflater.inflate(R.layout.row_item, parent, false);
             }
-            
+
             Item item = (Item) getItem(position);
             TextView textView = (TextView) view.findViewById(R.id.textView1);
             textView.setText(item.text);
         } else { // Section
             if (view == null) {
                 LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view = (LinearLayout) inflater.inflate(R.layout.row_section, parent, false);  
+                view = (LinearLayout) inflater.inflate(R.layout.row_section, parent, false);
             }
-            
+
             Section section = (Section) getItem(position);
             TextView textView = (TextView) view.findViewById(R.id.textView1);
             textView.setText(section.text);
         }
-        
+
         return view;
     }
 

@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
-	public TabsPagerAdapter(FragmentManager fm) {
-		super(fm);
+	public TabsPagerAdapter(FragmentManager fms) {
+		super(fms);
 	}
 
 	@Override

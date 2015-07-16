@@ -70,7 +70,6 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
         return rootView;
     }
 
-
     public class Loadcontacts extends AsyncTask<String, String, String> {
 
         @Override

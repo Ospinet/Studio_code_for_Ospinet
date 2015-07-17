@@ -63,9 +63,12 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
         sideNavigationView.setMode(Mode.LEFT);
-
+    //    new GetNotifications();
     }
 
+  //  public class GetNotifications{
+
+ //   }
     @Override
     public void onSideNavigationItemClick(int itemId) {
         switch(itemId)
@@ -201,6 +204,34 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         actionBar.setCustomView(v);
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
+        ImageButton imgbell = (ImageButton) v.findViewById(R.id.notifications);
+        ImageButton imgfriend = (ImageButton) v.findViewById(R.id.friendrequest);
+
+        imgfriend.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(PreMemberHome.this, Friend_requests.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
+                PreMemberHome.this.startActivity(intent);
+
+            }
+        });
+
+        imgbell.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(PreMemberHome.this, Notifications_Details.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
+                PreMemberHome.this.startActivity(intent);
+
+            }
+        });
         imgAdd.setOnClickListener(new OnClickListener() {
 
             @Override

@@ -13,66 +13,10 @@
         android:focusable="false"
         android:focusableInTouchMode="false" />
 
-    <RelativeLayout
-        android:id="@+id/txtOwner"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:longClickable="true">
-
-        <TextView
-            android:id="@+id/txtFname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:text="Fname"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:layout_below="@+id/txtFriendId"
-            android:layout_toRightOf="@+id/txtFriendId"
-            android:paddingTop="5dp">
-        </TextView>
-
-        <TextView
-            android:id="@+id/txtLname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:text="Lname"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/txtFname"
-            android:paddingTop="5dp">
-        </TextView>
-
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:text="Email"
-            android:textColor="#000000"
-            android:textSize="17dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="28dp">
-        </TextView>
-
-        <TextView
-            android:id="@+id/txtFriendId"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="15dp"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:textStyle="bold">
-        </TextView>
-
-    </RelativeLayout>
+        android:text="TextView" />
 
 </LinearLayout>

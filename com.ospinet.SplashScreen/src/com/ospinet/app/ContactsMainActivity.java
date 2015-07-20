@@ -20,6 +20,7 @@ import com.ospinet.app.AlphabetListAdapter.Section;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +31,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +51,9 @@ public class ContactsMainActivity extends ListActivity {
     private int indexListSize;
     ProgressDialog dialog;
     ArrayList<contact> arrcontacts;
+    CheckBox friends;
+    Button btnAdd;
+    private boolean[] contacts;
     class SideIndexGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
@@ -60,15 +68,16 @@ public class ContactsMainActivity extends ListActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_alphabet);
-
         mGestureDetector = new GestureDetector(this, new SideIndexGestureListener());
         dialog = new ProgressDialog(ContactsMainActivity.this);
         arrcontacts = new ArrayList<contact>();
         new Loadcontacts().execute();
+
     }
 
     @Override
@@ -220,7 +229,7 @@ public class ContactsMainActivity extends ListActivity {
 
                 List<String> lstContactName = new ArrayList<String>();
                 for (contact contact : arrcontacts) {
-                    lstContactName.add(contact.getFname() + contact.getLname());
+                    lstContactName.add(contact.getFname() +' '+ contact.getLname()+ '\n'  + contact.getemail()+ '\n'+'\n'  + contact.getfriend_id());
                 }
 
                 Collections.sort(lstContactName);

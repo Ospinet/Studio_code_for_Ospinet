@@ -3,12 +3,18 @@ package com.ospinet.app;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AlphabetListAdapter extends BaseAdapter {
 
@@ -78,6 +84,7 @@ public class AlphabetListAdapter extends BaseAdapter {
             Item item = (Item) getItem(position);
             TextView textView = (TextView) view.findViewById(R.id.textView1);
             textView.setText(item.text);
+
         } else { // Section
             if (view == null) {
                 LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -88,7 +95,6 @@ public class AlphabetListAdapter extends BaseAdapter {
             TextView textView = (TextView) view.findViewById(R.id.textView1);
             textView.setText(section.text);
         }
-
         return view;
     }
 

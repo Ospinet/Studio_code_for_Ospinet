@@ -61,7 +61,8 @@
             android:layout_marginTop="28dp"
             android:layout_toLeftOf="@+id/btnMale"
             android:layout_toRightOf="@+id/textTo"
-            android:layout_marginLeft="26dp" />
+            android:layout_marginLeft="26dp"
+            android:editable="@bool/abs__action_bar_embed_tabs" />
 
         <ImageView
             android:id="@+id/btnMale"
@@ -156,6 +157,7 @@
                     android:textColor="#79888A"
                     android:paddingLeft="8dp"
                     android:layout_alignParentRight="true"
+                    android:freezesText="true"
                     android:layout_toRightOf="@+id/textViewTitle" />
 
             </RelativeLayout>
@@ -187,6 +189,7 @@
                     android:textColor="#79888A"
                     android:paddingLeft="8dp"
                     android:layout_alignParentRight="true"
+                    android:freezesText="true"
                     android:layout_toRightOf="@+id/textViewTags" />
 
             </RelativeLayout>
@@ -218,6 +221,7 @@
                     android:textColor="#79888A"
                     android:paddingLeft="8dp"
                     android:layout_alignParentRight="true"
+                    android:freezesText="true"
                     android:layout_toRightOf="@+id/textViewOwner" />
 
             </RelativeLayout>
@@ -248,6 +252,7 @@
                     android:textColor="#79888A"
                     android:paddingLeft="8dp"
                     android:layout_alignParentRight="true"
+                    android:freezesText="true"
                     android:layout_toRightOf="@+id/textViewDesc" />
 
             </RelativeLayout>
@@ -278,6 +283,7 @@
                     android:textColor="#79888A"
                     android:paddingLeft="8dp"
                     android:layout_alignParentRight="true"
+                    android:freezesText="true"
                     android:layout_toRightOf="@+id/textViewDate" />
 
             </RelativeLayout>
@@ -287,10 +293,11 @@
         android:layout_width="wrap_content"
         android:layout_alignLeft="@+id/rel_home_header1"
         android:layout_alignRight="@+id/rel_home_header1"
-        android:layout_below="@+id/relrec">
+        android:layout_below="@+id/relrec"
+        android:layout_marginBottom="35dp">
 
         <Button
-            android:id="@+id/btnSend"
+            android:id="@+id/btnShare"
             style="@drawable/button_custom"
             android:layout_width="fill_parent"
             android:layout_height="41dp"
@@ -299,7 +306,7 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:layout_above="@+id/btnCancel"
-            android:layout_marginBottom="10dp" />
+            android:layout_alignParentLeft="true" />
 
         <Button
             android:id="@+id/btnCancel"
@@ -310,10 +317,9 @@
             android:text="Cancel"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:layout_marginBottom="39dp"
+            android:layout_marginBottom="22dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/btnSend"
-            android:layout_alignRight="@+id/btnSend"/>
+            android:layout_alignParentLeft="true" />
 
     </RelativeLayout>
         </RelativeLayout>

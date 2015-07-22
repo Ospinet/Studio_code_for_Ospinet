@@ -29,6 +29,7 @@ import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -51,9 +52,8 @@ public class ContactsMainActivity extends ListActivity {
     private int indexListSize;
     ProgressDialog dialog;
     ArrayList<contact> arrcontacts;
-    CheckBox friends;
     Button btnAdd;
-    private boolean[] contacts;
+    public static boolean[] checkedContacts;
     class SideIndexGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
@@ -77,7 +77,32 @@ public class ContactsMainActivity extends ListActivity {
         dialog = new ProgressDialog(ContactsMainActivity.this);
         arrcontacts = new ArrayList<contact>();
         new Loadcontacts().execute();
+btnAdd = (Button) findViewById(R.id.btnAdd);
+btnAdd.setOnClickListener(new OnClickListener() {
 
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		String selectedEmails="";
+		String selectedIds="";
+		for(int i=0;i<checkedContacts.length;i++)
+		{
+			if(checkedContacts[i])
+			{
+				selectedEmails= selectedEmails + arrcontacts.get(i).getemail()+";";
+				selectedIds= selectedIds + arrcontacts.get(i).getfriend_id()+";";
+			}
+		}
+		Toast.makeText(ContactsMainActivity.this, selectedEmails, Toast.LENGTH_LONG).show();
+		Toast.makeText(ContactsMainActivity.this, selectedIds, Toast.LENGTH_LONG).show();
+
+        Intent emails = new Intent(ContactsMainActivity.this, Share.class);
+        emails.putExtra("friends_email_ids", selectedEmails);
+        emails.putExtra("friends_ids", selectedIds);
+        emails.putExtra("EXIT", true);
+        ContactsMainActivity.this.startActivity(emails);
+	}
+});
     }
 
     @Override
@@ -228,12 +253,12 @@ public class ContactsMainActivity extends ListActivity {
                 }
 
                 List<String> lstContactName = new ArrayList<String>();
-                for (contact contact : arrcontacts) {
+                /*for (contact contact : arrcontacts) {
                     lstContactName.add(contact.getFname() +' '+ contact.getLname()+ '\n'  + contact.getemail()+ '\n'+'\n'  + contact.getfriend_id());
                 }
 
                 Collections.sort(lstContactName);
-
+*/
                 List<Row> rows = new ArrayList<Row>();
                 int start = 0;
                 int end = 0;
@@ -241,8 +266,8 @@ public class ContactsMainActivity extends ListActivity {
                 Object[] tmpIndexItem = null;
                 Pattern numberPattern = Pattern.compile("[0-9]");
 
-                for (String contact : lstContactName) {
-                    String firstLetter = contact.substring(0, 1);
+                for (contact contact : arrcontacts) {
+                    String firstLetter = contact.getFname().substring(0, 1);
 
                     // Group numbers together in the scroller
                     if (numberPattern.matcher(firstLetter).matches()) {
@@ -268,7 +293,7 @@ public class ContactsMainActivity extends ListActivity {
                     }
 
                     // Add the country to the list
-                    rows.add(new Item(contact));
+                    rows.add(new Item(contact.getFname() + " " +contact.getLname()+ "\n"  + contact.getemail(),contact.getfriend_id()));
                     previousLetter = firstLetter;
                 }
 
@@ -281,6 +306,11 @@ public class ContactsMainActivity extends ListActivity {
                     alphabet.add(tmpIndexItem);
                 }
 
+                checkedContacts = new boolean[arrcontacts.size()];
+                for(int i =0;i<arrcontacts.size();i++)
+                {
+                	checkedContacts[i] = false;
+                }
                 adapter.setRows(rows);
                 setListAdapter(adapter);
 

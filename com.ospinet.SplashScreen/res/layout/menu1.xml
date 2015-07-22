@@ -55,7 +55,7 @@
         android:id="@+id/notifications"
         android:layout_width="26dp"
         android:layout_height="fill_parent"
-        android:layout_marginRight="19dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/bell"
         android:layout_alignBottom="@+id/options"
         android:layout_toLeftOf="@+id/add"
@@ -65,10 +65,36 @@
         android:id="@+id/friendrequest"
         android:layout_width="26dp"
         android:layout_height="fill_parent"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/friends"
         android:layout_alignBottom="@+id/notifications"
         android:layout_toLeftOf="@+id/notifications"
         android:layout_alignTop="@+id/notifications" />
+    <TextView
+        android:id="@+id/actionbar_notifcation_textview2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/circle_red"
+        android:text="99"
+        android:textColor="#ffffff"
+        android:layout_alignBottom="@+id/options"
+        android:layout_toLeftOf="@+id/add"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:id="@+id/actionbar_notifcation_textview"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/circle_red"
+        android:text="1"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignTop="@+id/actionbar_notifcation_textview2"
+        android:layout_toLeftOf="@+id/notifications"
+        android:layout_marginRight="8dp" />
+
 
 </RelativeLayout>

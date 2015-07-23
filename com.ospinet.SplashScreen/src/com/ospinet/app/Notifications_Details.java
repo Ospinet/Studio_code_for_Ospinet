@@ -49,6 +49,7 @@ public class Notifications_Details extends SherlockActivity implements ISideNavi
         //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.notifications);
         showActionBar();
+        NotificationList = (ListView) findViewById(R.id.NotificationList);
         sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
@@ -112,7 +113,13 @@ public class Notifications_Details extends SherlockActivity implements ISideNavi
                 if(jsonMainNode!=null)
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
-                            JSONObject jsonChildNode = jsonMainNode.getJSONObject(i);
+                    	
+                            JSONArray jsonChildArray = jsonMainNode.getJSONArray(i);
+                            if(jsonChildArray!=null)
+                            {
+                            JSONObject jsonChildNode = jsonChildArray.getJSONObject(i);
+                            if(jsonChildNode!=null)
+                            {
                             id = jsonChildNode.optString("id");
                             type_id = jsonChildNode.optString("type_id");
                             from_user_id =  jsonChildNode.optString("from_user_id");
@@ -130,6 +137,8 @@ public class Notifications_Details extends SherlockActivity implements ISideNavi
                             r.setlname(lname);
                             arrnotify.add(r);
                             flag=1;
+                            }
+                            }
                         }
                     if(flag==0)
                     {

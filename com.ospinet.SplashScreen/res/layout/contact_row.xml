@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/lstselector" >
+        android:background="#FFFFFF" >
         <ImageView
             android:id="@+id/rightarrow"
             android:layout_width="wrap_content"

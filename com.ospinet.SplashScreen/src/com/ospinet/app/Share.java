@@ -19,10 +19,12 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 
 public class Share extends Activity {
+
 	String recId, memid,recDesc,recDate,recTitle,recTag,memfname,memlname,toemail,friends_ids;
     EditText YourEmail,ToEmail;
     Button btnCancel, btnShare;
     public static String user_id;
+    public static String FriendsIds;
     ProgressDialog dialog;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,30 +47,20 @@ public class Share extends Activity {
         SharedPreferences myPrefs = Share.this
                 .getSharedPreferences("remember", MODE_PRIVATE);
         user_id = myPrefs.getString("userid", null);
-     //   String email = myPrefs.getString("email", null);
         String fname = myPrefs.getString("fname", null);
         String lname = myPrefs.getString("lname", null);
-  //      YourEmail.setText(fname +" " + lname);
 
-        ArrayList<NameValuePair> record_details = new ArrayList<NameValuePair>();
-        SharedPreferences myrec = Share.this
-                .getSharedPreferences("remember", Context.MODE_PRIVATE);
-        String userId = myrec.getString("userid", null);
-        record_details.add(new BasicNameValuePair("SrecId",recId));
-        record_details.add(new BasicNameValuePair("SmemFname",memfname));
-        record_details.add(new BasicNameValuePair("SmemLname",memlname));
-        record_details.add(new BasicNameValuePair("SmemId",memid));
-        record_details.add(new BasicNameValuePair("SrecDesce",recDesc));
-        record_details.add(new BasicNameValuePair("SrecDate",recDate));
-        record_details.add(new BasicNameValuePair("SrecTitle",recTitle));
-        record_details.add(new BasicNameValuePair("SrecTag",recTag));
-
-        if(toemail != null){
-           // String[] splits = toemail.split(";");
+        if(toemail != null && friends_ids != null){
+            // String[] splits = toemail.split(";");
             final EditText ToEmail = (EditText) findViewById(R.id.ToEmail);
             ToEmail.setText(toemail);
 
-            System.out.println(record_details);
+            if (friends_ids.endsWith(",")) {
+                FriendsIds = friends_ids.substring(0, friends_ids.length() - 1);
+            }
+        }else
+        {
+            Toast.makeText(Share.this, "Select contacts from contacts list", Toast.LENGTH_LONG).show();
         }
         final EditText YourEmail = (EditText) findViewById(R.id.YourEmail);
         YourEmail.setText(fname +" " + lname);
@@ -94,7 +86,7 @@ public class Share extends Activity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent records = new Intent(Share.this, ShareRecordsFragment.class);
+                Intent records = new Intent(Share.this, ShareMainActivity.class);
                 Share.this.startActivity(records);
             }
         });
@@ -102,10 +94,9 @@ public class Share extends Activity {
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(toemail != null)
+                if(toemail != null && FriendsIds != null)
                 {
-                   // new Sharerecord().execute();
-                    Toast.makeText(Share.this, "Record share successfully ", Toast.LENGTH_LONG).show();
+                    new Share_record().execute();
                 }
                 else
                 {
@@ -115,46 +106,11 @@ public class Share extends Activity {
         });
 
 	}
+
     public void onBackPressed() {
-        Intent i = new Intent(Share.this, PreMemberHome.class);
+        Intent i = new Intent(Share.this, ShareMainActivity.class);
         this.startActivity(i);
         finish();
-    }
-
-    public class Sharerecord extends AsyncTask<String, String, String> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            dialog.setMessage("Please Wait..");
-            dialog.show();
-            dialog.setCancelable(false);
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            // TODO Auto-generated method stub
-            String retstring = "";
-            try {
-                ArrayList<NameValuePair> share_record = new ArrayList<NameValuePair>();
-                SharedPreferences myPrefs = Share.this
-                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
-                String userId = myPrefs.getString("userid", null);
-                share_record.add(new BasicNameValuePair("from_id",userId));
-                share_record.add(new BasicNameValuePair("to_id",friends_ids));
-                share_record.add(new BasicNameValuePair("record_id",recId));
-                String response = CustomHttpClient
-                        .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/share_records",
-                                share_record);
-                retstring = response.toString();
-            } catch (Exception io) {
-
-            }
-            onBackPressed();
-            Toast.makeText(Share.this, "Record share successfully ", Toast.LENGTH_LONG).show();
-            return retstring;
-
-        }
     }
 
     public void GetContacts(View v)
@@ -163,12 +119,52 @@ public class Share extends Activity {
         {
             Intent i = new Intent(Share.this, ContactsMainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            
+            i.putExtra("friends_email_ids",toemail);
+            i.putExtra("friends_ids",friends_ids);
+    		i.putExtra("record_id",recId);
+            i.putExtra("member_fname",memfname);
+            i.putExtra("member_lname",memlname);
+    		i.putExtra("member_id",memid);
+            i.putExtra("record_desc",recDesc);
+            i.putExtra("record_date", recDate);
+            i.putExtra("record_title",recTitle);
+            i.putExtra("record_tag",recTag);
             Share.this.startActivity(i);
 
         }
         catch(Exception ex)
         {
 
+        }
+    }
+    public class Share_record extends AsyncTask<String, String, String>{
+        protected String doInBackground(String... params) {
+
+        // TODO Auto-generated method stub
+        String retstring = "";
+        try {
+            ArrayList<NameValuePair> share_record = new ArrayList<NameValuePair>();
+            SharedPreferences myPrefs = Share.this
+                    .getSharedPreferences("remember", Context.MODE_PRIVATE);
+            String userId = myPrefs.getString("userid", null);
+            share_record.add(new BasicNameValuePair("from_id",userId));
+            share_record.add(new BasicNameValuePair("to_id",FriendsIds));
+            share_record.add(new BasicNameValuePair("record_id",recId));
+            String response = CustomHttpClient
+                    .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/share_records",
+                            share_record);
+            retstring = response.toString();
+
+        } catch (Exception io) {
+
+        }
+            return retstring;
+    }
+        protected void onPostExecute(String retstring) {
+
+            Toast.makeText(Share.this, retstring, Toast.LENGTH_LONG).show();
+            onBackPressed();
         }
     }
 }

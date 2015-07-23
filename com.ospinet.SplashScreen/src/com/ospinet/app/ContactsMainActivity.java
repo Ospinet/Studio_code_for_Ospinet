@@ -41,7 +41,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ContactsMainActivity extends ListActivity {
-
+	String recId, memid,recDesc,recDate,recTitle,recTag,memfname,memlname,toemail,friends_ids;
+    
     private AlphabetListAdapter adapter = new AlphabetListAdapter();
     private GestureDetector mGestureDetector;
     private List<Object[]> alphabet = new ArrayList<Object[]>();
@@ -73,6 +74,17 @@ public class ContactsMainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_alphabet);
+        toemail = getIntent().getStringExtra("friends_email_ids");
+        friends_ids = getIntent().getStringExtra("friends_ids");
+		recId = getIntent().getStringExtra("record_id");
+        memfname = getIntent().getStringExtra("member_fname");
+        memlname = getIntent().getStringExtra("member_lname");
+		memid = getIntent().getStringExtra("member_id");
+        recDesc = getIntent().getStringExtra("record_desc");
+        recDate = getIntent().getStringExtra("record_date");
+        recTitle = getIntent().getStringExtra("record_title");
+        recTag = getIntent().getStringExtra("record_tag");
+        
         mGestureDetector = new GestureDetector(this, new SideIndexGestureListener());
         dialog = new ProgressDialog(ContactsMainActivity.this);
         arrcontacts = new ArrayList<contact>();
@@ -89,18 +101,26 @@ btnAdd.setOnClickListener(new OnClickListener() {
 		{
 			if(checkedContacts[i])
 			{
-				selectedEmails= selectedEmails + arrcontacts.get(i).getemail()+";";
-				selectedIds= selectedIds + arrcontacts.get(i).getfriend_id()+";";
+				selectedEmails= selectedEmails + "[ " + arrcontacts.get(i).getemail()+" ], ";
+				selectedIds= selectedIds + arrcontacts.get(i).getfriend_id()+",";
 			}
 		}
 		Toast.makeText(ContactsMainActivity.this, selectedEmails, Toast.LENGTH_LONG).show();
-		Toast.makeText(ContactsMainActivity.this, selectedIds, Toast.LENGTH_LONG).show();
 
-        Intent emails = new Intent(ContactsMainActivity.this, Share.class);
-        emails.putExtra("friends_email_ids", selectedEmails);
-        emails.putExtra("friends_ids", selectedIds);
-        emails.putExtra("EXIT", true);
-        ContactsMainActivity.this.startActivity(emails);
+        Intent i = new Intent(ContactsMainActivity.this, Share.class);
+        i.putExtra("record_id", recId);
+        i.putExtra("member_id", memid);
+        i.putExtra("record_desc", recDesc);
+        i.putExtra("record_date", recDate);
+        i.putExtra("record_title", recTitle);
+        i.putExtra("record_tag", recTag);
+        i.putExtra("member_fname", memfname);
+        i.putExtra("member_lname", memlname);
+        i.putExtra("friends_email_ids", selectedEmails);
+        i.putExtra("friends_ids", selectedIds);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.putExtra("EXIT", true);
+        ContactsMainActivity.this.startActivity(i);
 	}
 });
     }
@@ -321,5 +341,20 @@ btnAdd.setOnClickListener(new OnClickListener() {
             }
         }
     }
-
+@Override
+public void onBackPressed() {
+	// TODO Auto-generated method stub
+	  Intent i = new Intent(this, Share.class);
+      i.putExtra("record_id", recId);
+      i.putExtra("member_id", memid);
+      i.putExtra("record_desc", recDesc);
+      i.putExtra("record_date", recDate);
+      i.putExtra("record_title", recTitle);
+      i.putExtra("record_tag", recTag);
+      i.putExtra("member_fname", memfname);
+      i.putExtra("member_lname", memlname);
+      i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+      i.putExtra("EXIT", true);
+      this.startActivity(i);
+}
 }

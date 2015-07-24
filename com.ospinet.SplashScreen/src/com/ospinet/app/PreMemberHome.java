@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,13 @@ import com.androidquery.AQuery;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class PreMemberHome extends SherlockActivity implements ISideNavigationCallback {
     private SideNavigationView sideNavigationView;
@@ -49,26 +57,91 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         AQuery androidAQuery = new AQuery(
                 PreMemberHome.this);
 
-
+       // Toast.makeText(PreMemberHome.this, profile_pic, Toast.LENGTH_LONG).show();
         if(profile_pic == null){
+        //    Toast.makeText(PreMemberHome.this, "Default", Toast.LENGTH_LONG).show();
             androidAQuery.id(imageView_round).image(
                     "http://ospinet.com/assets/images/people/250/default_avatar_250x250.png", false, false,0, 0);   //"http://ospinet.com/assets/images/people/250/default_avatar_250x250.png"
         }else{
+         //   Toast.makeText(PreMemberHome.this, "Set", Toast.LENGTH_LONG).show();
             androidAQuery.id(imageView_round).image(
                     "http://ospinet.com/profile_pic/member_pic_250/" + profile_image, false, false,0, 0);   //"http://ospinet.com/profile_pic/member_pic_250/" + profile_image;
         }
-        //new GetLoginUser().execute();
         showActionBar();
+        new GetNotificationsCount().execute();
+        new GetFriendRequestCount().execute();
         sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
         sideNavigationView.setMode(Mode.LEFT);
-    //    new GetNotifications();
+
     }
 
-  //  public class GetNotifications{
+    public class GetFriendRequestCount extends AsyncTask<String, String, String> {
+        protected String doInBackground(String... params) {
 
- //   }
+            // TODO Auto-generated method stub
+            String Friend_Request_count = "";
+            try {
+                ArrayList<NameValuePair> Friend_Request = new ArrayList<NameValuePair>();
+                SharedPreferences myPrefs = PreMemberHome.this
+                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String userId = myPrefs.getString("userid", null);
+                Friend_Request.add(new BasicNameValuePair("user_id",userId));
+                String response = CustomHttpClient
+                        .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/get_request_count",
+                                Friend_Request);
+                Friend_Request_count = response.toString();
+
+            } catch (Exception io) {
+
+            }
+            return Friend_Request_count;
+        }
+        protected void onPostExecute(String Friend_Request_count) {
+            if(Friend_Request_count != "0"){
+                TextView friend_count = (TextView) findViewById(R.id.actionbar_notifcation_textview);
+                friend_count.setText(Friend_Request_count);
+            }else{
+                TextView friend_count = (TextView) findViewById(R.id.actionbar_notifcation_textview);
+                friend_count.setVisibility(View.GONE);
+            }
+        }
+
+    }
+
+    public class GetNotificationsCount extends AsyncTask<String, String, String> {
+        protected String doInBackground(String... params) {
+
+            // TODO Auto-generated method stub
+            String Count = "";
+            try {
+                ArrayList<NameValuePair> Notification_count = new ArrayList<NameValuePair>();
+                SharedPreferences myPrefs = PreMemberHome.this
+                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String userId = myPrefs.getString("userid", null);
+                Notification_count.add(new BasicNameValuePair("user_id",userId));
+                String response = CustomHttpClient
+                        .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/get_notification_count",
+                                Notification_count);
+                Count = response.toString();
+
+            } catch (Exception io) {
+
+            }
+            return Count;
+        }
+        protected void onPostExecute(String Count) {
+            if(Count != "0"){
+                TextView notification_count = (TextView) findViewById(R.id.actionbar_notifcation_textview2);
+                notification_count.setText(Count);
+            }else{
+                TextView notification_count = (TextView) findViewById(R.id.actionbar_notifcation_textview2);
+                notification_count.setVisibility(View.INVISIBLE);
+            }
+        }
+
+    }
     @Override
     public void onSideNavigationItemClick(int itemId) {
         switch(itemId)

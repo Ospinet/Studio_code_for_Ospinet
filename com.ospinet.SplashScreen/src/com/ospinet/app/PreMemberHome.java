@@ -50,20 +50,17 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
                 .getSharedPreferences("remember", MODE_PRIVATE);
         String fname = myPrefs.getString("fname", null);
         String lname = myPrefs.getString("lname", null);
-        String profile_pic = myPrefs.getString("profile_pic", null);
+        String profile_pic = myPrefs.getString("profile_pic", "null");
         String type = myPrefs.getString("type", null);
         txtname.setText(fname +" " + lname);
         String profile_image = (profile_pic +"_250." + type);
         AQuery androidAQuery = new AQuery(
                 PreMemberHome.this);
 
-       // Toast.makeText(PreMemberHome.this, profile_pic, Toast.LENGTH_LONG).show();
-        if(profile_pic == null){
-        //    Toast.makeText(PreMemberHome.this, "Default", Toast.LENGTH_LONG).show();
+        if(profile_pic == null || profile_pic.equals("null")){
             androidAQuery.id(imageView_round).image(
                     "http://ospinet.com/assets/images/people/250/default_avatar_250x250.png", false, false,0, 0);   //"http://ospinet.com/assets/images/people/250/default_avatar_250x250.png"
         }else{
-         //   Toast.makeText(PreMemberHome.this, "Set", Toast.LENGTH_LONG).show();
             androidAQuery.id(imageView_round).image(
                     "http://ospinet.com/profile_pic/member_pic_250/" + profile_image, false, false,0, 0);   //"http://ospinet.com/profile_pic/member_pic_250/" + profile_image;
         }
@@ -99,7 +96,7 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
             return Friend_Request_count;
         }
         protected void onPostExecute(String Friend_Request_count) {
-            if(Friend_Request_count != "0"){
+            if(!Friend_Request_count.replace("\n","").equals("0")){
                 TextView friend_count = (TextView) findViewById(R.id.actionbar_notifcation_textview);
                 friend_count.setText(Friend_Request_count);
             }else{
@@ -132,7 +129,7 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
             return Count;
         }
         protected void onPostExecute(String Count) {
-            if(Count != "0"){
+            if(!Count.replace("\n","").equals("0")){
                 TextView notification_count = (TextView) findViewById(R.id.actionbar_notifcation_textview2);
                 notification_count.setText(Count);
             }else{

@@ -22,19 +22,13 @@
         android:layout_toRightOf="@+id/options"
         android:layout_marginLeft="5dp"
         android:layout_centerVertical="true">
-    <ImageButton
-        android:id="@+id/logo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-       android:clickable="true"
-        android:background="@drawable/ospinet_big_logo" />
-<TextView 
-    android:id="@+id/logoName"
-     android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <TextView
+            android:id="@+id/logoName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
        android:text="OSPINET"
        android:textColor="@android:color/white"
-       
        android:layout_marginLeft="3dp"
        android:clickable="true"
        android:textSize="18sp"

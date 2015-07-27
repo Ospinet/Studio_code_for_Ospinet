@@ -58,6 +58,8 @@ public class Member_Home extends SherlockActivity implements ISideNavigationCall
 		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.member);
 		showActionBar();
+        new GetNotificationsCount().execute();
+        new GetFriendRequestCount().execute();
         sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
@@ -452,6 +454,70 @@ public class Member_Home extends SherlockActivity implements ISideNavigationCall
 	
 	
 	}
-	
+    public class GetFriendRequestCount extends AsyncTask<String, String, String> {
+        protected String doInBackground(String... params) {
+
+            // TODO Auto-generated method stub
+            String Friend_Request_count = "";
+            try {
+                ArrayList<NameValuePair> Friend_Request = new ArrayList<NameValuePair>();
+                SharedPreferences myPrefs = Member_Home.this
+                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String userId = myPrefs.getString("userid", null);
+                Friend_Request.add(new BasicNameValuePair("user_id",userId));
+                String response = CustomHttpClient
+                        .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/get_request_count",
+                                Friend_Request);
+                Friend_Request_count = response.toString();
+
+            } catch (Exception io) {
+
+            }
+            return Friend_Request_count;
+        }
+        protected void onPostExecute(String Friend_Request_count) {
+            if(!Friend_Request_count.replace("\n","").equals("0")){
+                TextView friend_count = (TextView) findViewById(R.id.actionbar_notifcation_textview);
+                friend_count.setText(Friend_Request_count);
+            }else{
+                TextView friend_count = (TextView) findViewById(R.id.actionbar_notifcation_textview);
+                friend_count.setVisibility(View.GONE);
+            }
+        }
+
+    }
+
+    public class GetNotificationsCount extends AsyncTask<String, String, String> {
+        protected String doInBackground(String... params) {
+
+            // TODO Auto-generated method stub
+            String Count = "";
+            try {
+                ArrayList<NameValuePair> Notification_count = new ArrayList<NameValuePair>();
+                SharedPreferences myPrefs = Member_Home.this
+                        .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String userId = myPrefs.getString("userid", null);
+                Notification_count.add(new BasicNameValuePair("user_id",userId));
+                String response = CustomHttpClient
+                        .executeHttpPost("http://ospinet.com/app_ws/android_app_fun/get_notification_count",
+                                Notification_count);
+                Count = response.toString();
+
+            } catch (Exception io) {
+
+            }
+            return Count;
+        }
+        protected void onPostExecute(String Count) {
+            if(!Count.replace("\n","").equals("0")){
+                TextView notification_count = (TextView) findViewById(R.id.actionbar_notifcation_textview2);
+                notification_count.setText(Count);
+            }else{
+                TextView notification_count = (TextView) findViewById(R.id.actionbar_notifcation_textview2);
+                notification_count.setVisibility(View.INVISIBLE);
+            }
+        }
+
+    }
 	 
 }

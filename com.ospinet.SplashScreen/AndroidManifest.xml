@@ -41,7 +41,7 @@
             <activity android:name="com.ospinet.app.ContactsMainActivity" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.Notifications_Details" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.Friend_requests" android:screenOrientation="portrait" ></activity>
-            <activity android:name=".MainActivity" android:screenOrientation="portrait" ></activity>
+            <activity android:name=".SearchMainActivity" android:screenOrientation="portrait" ></activity>
             <activity android:name=".ShareMainActivity" android:screenOrientation="portrait" ></activity>
             <activity android:name="com.ospinet.app.login_2" android:screenOrientation="portrait" android:noHistory="true">
                  <intent-filter>

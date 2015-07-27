@@ -16,6 +16,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
@@ -318,6 +319,7 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
         });
 
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
+        imgAdd.setVisibility(View.INVISIBLE);
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
         imgAdd.setOnClickListener(new OnClickListener() {
 
@@ -333,17 +335,14 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
             }
         });
         imgMenu.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 sideNavigationView.toggleMenu();
-	                /*RelativeLayout rel = (RelativeLayout) findViewById(R.id.rel);
-	                rel.bringChildToFront(sideNavigationView);*/
-
+                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                rel.bringChildToFront(sideNavigationView);
             }
-        });
-        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
+        });        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
         TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
 
         imgLogo.setOnClickListener(new OnClickListener() {

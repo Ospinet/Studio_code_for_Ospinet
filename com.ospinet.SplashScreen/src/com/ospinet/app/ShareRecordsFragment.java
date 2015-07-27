@@ -202,7 +202,7 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
                         i.putExtra("record_tag", recTag);
                         i.putExtra("member_fname", recFname);
                         i.putExtra("member_lname", recLname);
-                       // i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        // i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         i.putExtra("EXIT", true);
                         builder.show();
                         getActivity().startActivity(i);
@@ -304,6 +304,53 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
         }
     }
 
+    public void onSideNavigationItemClick(int itemId) {
+        switch(itemId)
+        {
+            case R.id.side_navigation_menu_item1:
+                Intent i = new Intent(getActivity(), LoginActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.putExtra("EXIT", true);
+                getActivity().startActivity(i);
+
+                break;
+
+            case R.id.side_navigation_menu_item2:
+                Intent records = new Intent(getActivity(), Member_Home.class);
+                getActivity().startActivity(records);
+
+                break;
+
+            case R.id.side_navigation_menu_item3:
+                Intent help = new Intent(getActivity(), help.class);
+                getActivity().startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(getActivity(), PreMemberHome.class);
+                getActivity().startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(getActivity(), ShareMainActivity.class);
+                getActivity().startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(getActivity(), SearchMainActivity.class);
+                getActivity().startActivity(search);
+
+                break;
+
+            default:
+                return;
+        }
+        // finish();
+    }
+
     private void showActionBar() {
         LayoutInflater inflator = (LayoutInflater) getActivity()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -318,7 +365,6 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
         edit.setVisibility(View.INVISIBLE);
 
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
-
         imgMenu.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -330,19 +376,7 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
             }
         });
 
-        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
         TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
-
-        imgLogo.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent i = new Intent(getActivity(),PreMemberHome.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivity(i);
-            }
-        });
         txtLogoName.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -354,36 +388,6 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
             }
         });
 
-    }
-
-    public void onSideNavigationItemClick(int itemId) {
-        switch(itemId)
-        {
-            case R.id.side_navigation_menu_item1:
-                Intent i = new Intent(getActivity(), LoginActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.putExtra("EXIT", true);
-
-                getActivity().startActivity(i);
-
-                break;
-
-            case R.id.side_navigation_menu_item2:
-                Intent records = new Intent(getActivity(), Member_Home.class);
-                getActivity().startActivity(records);
-
-                break;
-
-            case R.id.side_navigation_menu_item3:
-                Intent help = new Intent(getActivity(), com.ospinet.app.help.class);
-                getActivity().startActivity(help);
-
-                break;
-
-            default:
-                return;
-        }
-        // finish();
     }
 
 }

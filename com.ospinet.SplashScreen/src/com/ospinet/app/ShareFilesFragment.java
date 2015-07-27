@@ -15,6 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
@@ -108,18 +109,18 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
             try {
                 String file_name="";
                 String file_member_id="";
-            	String fname ="";
-            	String lname="";
-            	String record_id = "";
-				String member_id = "";
-				String title = "";
-				String description = "";
-				String date = "";
-				String tagid = "";
-				String tagname = "";
-				String filename = "";
+                String fname ="";
+                String lname="";
+                String record_id = "";
+                String member_id = "";
+                String title = "";
+                String description = "";
+                String date = "";
+                String tagid = "";
+                String tagname = "";
+                String filename = "";
 
-				jsonResponse = new JSONObject(retstring);
+                jsonResponse = new JSONObject(retstring);
                 int flag=0;
                 JSONArray jsonMainNode = jsonResponse
                         .optJSONArray("result");
@@ -127,37 +128,37 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
                 {
                     for (int i = 0; i < jsonMainNode.length(); i++) {
 
-                    	JSONArray jsonChildArray = jsonMainNode.getJSONArray(i);
-                    	if(jsonChildArray != null)
-                    	{
-                    		for(int j =0;j<jsonChildArray.length();j++)
-                    		{
-                    			JSONObject jsonChildObject = jsonChildArray.getJSONObject(j);
-                    			if(jsonChildObject!=null)
-                    			{
+                        JSONArray jsonChildArray = jsonMainNode.getJSONArray(i);
+                        if(jsonChildArray != null)
+                        {
+                            for(int j =0;j<jsonChildArray.length();j++)
+                            {
+                                JSONObject jsonChildObject = jsonChildArray.getJSONObject(j);
+                                if(jsonChildObject!=null)
+                                {
                                     file_id = jsonChildObject.optString("id");
                                     file_name = jsonChildObject.optString("file_name");
                                     file_member_id = jsonChildObject.optString("member_id");
-                    				fname = jsonChildObject.optString("fname");
-                    				lname = jsonChildObject.optString("lname");
-                    				
-                    				file r = new file();
-			                        r.setFname(fname);
-			                        r.setLname(lname);
-			                        r.setMember_id(member_id);
-			                        r.setFile_name(file_name);
+                                    fname = jsonChildObject.optString("fname");
+                                    lname = jsonChildObject.optString("lname");
+
+                                    file r = new file();
+                                    r.setFname(fname);
+                                    r.setLname(lname);
+                                    r.setMember_id(member_id);
+                                    r.setFile_name(file_name);
                                     r.setFile_id(file_id);
                                     r.setFile_member_id(file_member_id);
-			                        arrfiles.add(r);
-			                        flag=1;
-                    			}
-                    		}
-			                        SharedPreferences myPrefs = getActivity()
-											.getSharedPreferences("remember", Context.MODE_PRIVATE);
-									SharedPreferences.Editor prefsEditor = myPrefs.edit();
-									
-									prefsEditor.putString("file_response", retstring);
-									prefsEditor.commit();
+                                    arrfiles.add(r);
+                                    flag=1;
+                                }
+                            }
+                            SharedPreferences myPrefs = getActivity()
+                                    .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor prefsEditor = myPrefs.edit();
+
+                            prefsEditor.putString("file_response", retstring);
+                            prefsEditor.commit();
 /*                    			JSONArray jsonRecordArray = jsonChildObject
                                          .optJSONArray("record");
                     				if(jsonRecordArray!=null)
@@ -200,10 +201,10 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
                     						}
                     					}
                     				}*/
-                    			
-                    			 
-                    		}
-                    	}
+
+
+                        }
+                    }
 
                     if(flag==0)
                     {
@@ -230,24 +231,24 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
                 filesList.setAdapter(rad);
                 filesList.setOnItemClickListener(new OnItemClickListener() {
 
-					@Override
-					public void onItemClick(AdapterView<?> parent, View view,
-							int position, long id) {
-						// TODO Auto-generated method stub
-						 TextView txtFile_id = (TextView) view.findViewById(R.id.txtFile_id);
-						 SharedPreferences myPrefs = getActivity()
-									.getSharedPreferences("remember", Context.MODE_PRIVATE);
-							SharedPreferences.Editor prefsEditor = myPrefs.edit();
-							
-							prefsEditor.putString("file_id", txtFile_id.getText().toString());
-							prefsEditor.commit();
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+                        // TODO Auto-generated method stub
+                        TextView txtFile_id = (TextView) view.findViewById(R.id.txtFile_id);
+                        SharedPreferences myPrefs = getActivity()
+                                .getSharedPreferences("remember", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor prefsEditor = myPrefs.edit();
+
+                        prefsEditor.putString("file_id", txtFile_id.getText().toString());
+                        prefsEditor.commit();
 
                         Intent i = new Intent(getActivity(), File_records_list.class);
                         i.putExtra("file_id", file_id);
 
                         getActivity().startActivity(i);
-					}
-				});
+                    }
+                });
 
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
@@ -269,19 +270,19 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
         edit=(TextView) v.findViewById(R.id.txtEdit);
         edit.setVisibility(View.INVISIBLE);
 
-        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
-        TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
-
-        imgLogo.setOnClickListener(new OnClickListener() {
+        ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
+        imgMenu.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent i = new Intent(getActivity(),PreMemberHome.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivity(i);
+                sideNavigationView.toggleMenu();
+                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                rel.bringChildToFront(sideNavigationView);
             }
         });
+
+        TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
         txtLogoName.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -316,6 +317,24 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
             case R.id.side_navigation_menu_item3:
                 Intent help = new Intent(getActivity(), com.ospinet.app.help.class);
                 getActivity().startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(getActivity(), PreMemberHome.class);
+                getActivity().startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(getActivity(), ShareMainActivity.class);
+                getActivity().startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(getActivity(), SearchMainActivity.class);
+                getActivity().startActivity(search);
 
                 break;
 

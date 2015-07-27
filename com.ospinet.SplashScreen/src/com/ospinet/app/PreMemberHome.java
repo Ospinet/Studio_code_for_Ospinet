@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.androidquery.AQuery;
@@ -24,8 +23,6 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -33,7 +30,6 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
     private SideNavigationView sideNavigationView;
     ProgressDialog dialog;
 
-    // rahul
     TextView txtname;
     ImageView imageView_round;
     @Override
@@ -42,7 +38,7 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         super.onCreate(savedInstanceState);
         //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.home_new);
-// rahul
+
         dialog = new ProgressDialog(PreMemberHome.this);
         txtname = (TextView) findViewById(R.id.txtName);
         imageView_round = (ImageView) findViewById(R.id.imageView_round);
@@ -57,7 +53,7 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         AQuery androidAQuery = new AQuery(
                 PreMemberHome.this);
 
-        if(profile_pic == null || profile_pic.equals("null")){
+        if(profile_pic == null || profile_pic.equals("null") || profile_pic.equals("")){
             androidAQuery.id(imageView_round).image(
                     "http://ospinet.com/assets/images/people/250/default_avatar_250x250.png", false, false,0, 0);   //"http://ospinet.com/assets/images/people/250/default_avatar_250x250.png"
         }else{
@@ -71,7 +67,6 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
         sideNavigationView.setMode(Mode.LEFT);
-
     }
 
     public class GetFriendRequestCount extends AsyncTask<String, String, String> {
@@ -137,7 +132,6 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
                 notification_count.setVisibility(View.INVISIBLE);
             }
         }
-
     }
     @Override
     public void onSideNavigationItemClick(int itemId) {
@@ -161,6 +155,24 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
             case R.id.side_navigation_menu_item3:
                 Intent help = new Intent(PreMemberHome.this, com.ospinet.app.help.class);
                 PreMemberHome.this.startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(PreMemberHome.this, PreMemberHome.class);
+                PreMemberHome.this.startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(PreMemberHome.this, ShareMainActivity.class);
+                PreMemberHome.this.startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(PreMemberHome.this, SearchMainActivity.class);
+                PreMemberHome.this.startActivity(search);
 
                 break;
 
@@ -225,7 +237,7 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
     {
         try
         {
-            Intent i = new Intent(PreMemberHome.this, MainActivity.class);
+            Intent i = new Intent(PreMemberHome.this, SearchMainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             PreMemberHome.this.startActivity(i);
 
@@ -348,9 +360,6 @@ public class PreMemberHome extends SherlockActivity implements ISideNavigationCa
                 startActivity(i);
             }
         });
-
-
-
     }
 
 

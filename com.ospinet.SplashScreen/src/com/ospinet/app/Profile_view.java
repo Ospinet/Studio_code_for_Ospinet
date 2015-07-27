@@ -116,7 +116,6 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
     actionBar.setDisplayShowCustomEnabled(true);
     actionBar.setDisplayShowTitleEnabled(false);
     actionBar.setCustomView(v);
-    ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
     TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
     ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
     TextView txtEdit = (TextView) v.findViewById(R.id.txtEdit);
@@ -133,16 +132,7 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
 
             }
         });
-    imgLogo.setOnClickListener(new OnClickListener() {
 
-    	@Override
-    	public void onClick(View v) {
-    		// TODO Auto-generated method stub
-    		Intent i = new Intent(Profile_view.this,PreMemberHome.class);
-    		i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-    		startActivity(i);
-    	}
-    });
     txtLogoName.setOnClickListener(new OnClickListener() {
 
     	@Override
@@ -164,8 +154,6 @@ public class Profile_view extends  SherlockActivity implements ISideNavigationCa
 
             }
         });
-
-
 
     }
 

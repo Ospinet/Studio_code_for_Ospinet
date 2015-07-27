@@ -67,7 +67,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
         sideNavigationView.setMenuClickCallback(this);
         sideNavigationView.setMode(Mode.LEFT);
         dialog = new ProgressDialog(getActivity());
-        //memid = getActivity().getIntent().getStringExtra("member_id");
         txtNoRec = (TextView) rootView.findViewById(R.id.txt_home_norec);
         btnNew= (Button) rootView.findViewById(R.id.btnNewAdd);
         txtNoRec.setVisibility(View.GONE);
@@ -211,95 +210,7 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
 
             /*    recordList.setAdapter(rad);*/
                 rad.notifyDataSetChanged();
-             /*   recordList.setOnItemClickListener(new OnItemClickListener() {
 
-                    @Override
-                    public void onItemClick(AdapterView<?> arg0, View arg1,
-                                            int arg2, long arg3) {
-                        TextView txtId = (TextView) arg1
-                                .findViewById(R.id.txtId);
-                        final String recId = txtId.getText().toString();
-                        final Dialog builder = new Dialog(getActivity());
-
-                        final View view = getActivity().getLayoutInflater().inflate(
-                                R.layout.record_options, null);
-                        builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                        builder.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                        builder.setContentView(view);
-                        Button btnDelete = (Button) builder.findViewById(R.id.btn_Delete);
-                        Button btnEdit = (Button) builder.findViewById(R.id.btn_Edit);
-                        Button btnView = (Button) builder.findViewById(R.id.btn_view);
-
-                        builder.show();
-
-
-                        btnDelete.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                // TODO Auto-generated method stub
-                                AlertDialog.Builder deleteConfirmDialog = new AlertDialog.Builder(
-                                        getActivity());
-                                deleteConfirmDialog
-                                        .setTitle("Delete Record");
-                                // myAlertDialog.setMessage("Please enter new password");
-                                deleteConfirmDialog.setPositiveButton("OK",
-                                        new DialogInterface.OnClickListener() {
-
-                                            public void onClick(
-                                                    DialogInterface arg0,
-                                                    int arg1) {
-                                                new DeleteRecord()
-                                                        .execute(recId);
-                                            }
-                                        });
-                                deleteConfirmDialog.setNegativeButton("Cancel",
-                                        new DialogInterface.OnClickListener() {
-
-                                            public void onClick(
-                                                    DialogInterface arg0,
-                                                    int arg1) {
-
-                                            }
-                                        });
-                                deleteConfirmDialog.show();
-
-                            }
-
-                        });
-                        btnEdit.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                Intent i = new Intent(getActivity(), Record_Edit.class);
-                                i.putExtra("record_id", recId);
-                                i.putExtra("member_id", memid);
-                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                i.putExtra("EXIT", true);
-
-                                getActivity().startActivity(i);
-                                //finish();
-                            }
-                        });
-                        btnView.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                Intent i = new Intent(getActivity(), Record_View.class);
-                                i.putExtra("record_id", recId);
-                                i.putExtra("member_id", memid);
-                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                i.putExtra("EXIT", true);
-
-                                getActivity().startActivity(i);
-                                finish();
-                            }
-                        });
-
-                    }
-
-                });
-*/
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -443,93 +354,6 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                         i.putExtra("EXIT", true);
                         builder.show();
                         getActivity().startActivity(i);
-
-                /*    @Override
-                    public void onItemClick(AdapterView<?> arg0, View arg1,
-                                            int arg2, long arg3) {
-                        TextView txtId = (TextView) arg1
-                                .findViewById(R.id.txtId);
-                        TextView txtMemID = (TextView) arg1
-                                .findViewById(R.id.txtMemID);
-                        final String recId = txtId.getText().toString();
-                        final String recMemid = txtMemID.getText().toString();
-                        final Dialog builder = new Dialog(getActivity());
-
-                        final View view = getActivity().getLayoutInflater().inflate(
-                                R.layout.record_options, null);
-                   //     builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                   //     builder.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                   //     builder.setContentView(view);
-                   //     Button btnDelete = (Button) builder.findViewById(R.id.btn_Delete);
-                   //     Button btnEdit = (Button) builder.findViewById(R.id.btn_Edit);
-                   //     Button btnView = (Button) builder.findViewById(R.id.btn_view);
-
-                        builder.show();
-
-
-                 /*       btnDelete.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                // TODO Auto-generated method stub
-                                AlertDialog.Builder deleteConfirmDialog = new AlertDialog.Builder(
-                                        getActivity());
-                                deleteConfirmDialog
-                                        .setTitle("Delete Record");
-                                // myAlertDialog.setMessage("Please enter new password");
-                                deleteConfirmDialog.setPositiveButton("OK",
-                                        new DialogInterface.OnClickListener() {
-
-                                            public void onClick(
-                                                    DialogInterface arg0,
-                                                    int arg1) {
-                                                new DeleteRecord()
-                                                        .execute(recId);
-                                            }
-                                        });
-                                deleteConfirmDialog.setNegativeButton("Cancel",
-                                        new DialogInterface.OnClickListener() {
-
-                                            public void onClick(
-                                                    DialogInterface arg0,
-                                                    int arg1) {
-
-                                            }
-                                        });
-                                deleteConfirmDialog.show();
-
-                            }
-
-                        });
-                        btnEdit.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                Intent i = new Intent(getActivity(), Record_Edit.class);
-                                i.putExtra("record_id", recId);
-                                i.putExtra("member_id", recMemid);
-                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                i.putExtra("EXIT", true);
-
-                                getActivity().startActivity(i);
-                                //finish();
-                            }
-                        });
-                        btnView.setOnClickListener(new OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                Intent i = new Intent(getActivity(), Record_View.class);
-                                i.putExtra("record_id", recId);
-                                i.putExtra("member_id", recMemid);
-                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                i.putExtra("EXIT", true);
-
-                                getActivity().startActivity(i);
-
-                            }
-                        });*/
-
                     }
 
                 });
@@ -576,29 +400,16 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
         });
 
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
+        imgAdd.setVisibility(View.INVISIBLE);
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
-        imgAdd.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent(getActivity(), RecordActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("EXIT", true);
-                intent.putExtra("member_id", memid);
-                getActivity().startActivity(intent);
-
-            }
-        });
         imgMenu.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 sideNavigationView.toggleMenu();
-	                /*RelativeLayout rel = (RelativeLayout) findViewById(R.id.rel);
-	                rel.bringChildToFront(sideNavigationView);*/
-
+                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                rel.bringChildToFront(sideNavigationView);
             }
         });
         ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);

@@ -315,7 +315,7 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
                 break;
 
             case R.id.side_navigation_menu_item3:
-                Intent help = new Intent(getActivity(), com.ospinet.app.help.class);
+                Intent help = new Intent(getActivity(), help.class);
                 getActivity().startActivity(help);
 
                 break;

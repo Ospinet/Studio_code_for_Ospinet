@@ -679,36 +679,53 @@ public static int calculateInSampleSize(BitmapFactory.Options options,
     });
 	}
 	@Override
- public void onSideNavigationItemClick(int itemId) {
-		switch(itemId)
-		{
- case R.id.side_navigation_menu_item1:
- 	Intent i = new Intent(RecordActivity.this, LoginActivity.class);
-		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		i.putExtra("EXIT", true);
+    public void onSideNavigationItemClick(int itemId) {
+        switch(itemId)
+        {
+            case R.id.side_navigation_menu_item1:
+                Intent i = new Intent(RecordActivity.this, LoginActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.putExtra("EXIT", true);
 
-		RecordActivity.this.startActivity(i);
+                RecordActivity.this.startActivity(i);
 
- 	break;
+                break;
 
- case R.id.side_navigation_menu_item2:
-      Intent records = new Intent(RecordActivity.this, Member_Home.class);
-     RecordActivity.this.startActivity(records);
+            case R.id.side_navigation_menu_item2:
+                Intent records = new Intent(RecordActivity.this, Member_Home.class);
+                RecordActivity.this.startActivity(records);
 
-      break;
+                break;
 
- case R.id.side_navigation_menu_item3:
-      Intent help = new Intent(RecordActivity.this, com.ospinet.app.help.class);
-      RecordActivity.this.startActivity(help);
+            case R.id.side_navigation_menu_item3:
+                Intent help = new Intent(RecordActivity.this, help.class);
+                RecordActivity.this.startActivity(help);
 
-      break;
+                break;
 
- 
- default:
-     return;
-     }
-    // finish();
- }
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(RecordActivity.this, PreMemberHome.class);
+                RecordActivity.this.startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(RecordActivity.this, ShareMainActivity.class);
+                RecordActivity.this.startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(RecordActivity.this, SearchMainActivity.class);
+                RecordActivity.this.startActivity(search);
+
+                break;
+
+            default:
+                return;
+        }
+        // finish();
+    }
 
 	public void onBackPressed() {
 		// TODO Auto-generated method stub

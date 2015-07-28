@@ -327,37 +327,54 @@ public class Record_Edit extends SherlockActivity implements ISideNavigationCall
 	
 	}
 			@Override
-	    public void onSideNavigationItemClick(int itemId) {
-			switch(itemId)
-			{
-	    case R.id.side_navigation_menu_item1:
-	    	Intent i = new Intent(Record_Edit.this, LoginActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			i.putExtra("EXIT", true);
+            public void onSideNavigationItemClick(int itemId) {
+                switch(itemId)
+                {
+                    case R.id.side_navigation_menu_item1:
+                        Intent i = new Intent(Record_Edit.this, LoginActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.putExtra("EXIT", true);
 
-			Record_Edit.this.startActivity(i);
+                        Record_Edit.this.startActivity(i);
 
-	    	break;
+                        break;
 
-        case R.id.side_navigation_menu_item2:
-            Intent records = new Intent(Record_Edit.this, Member_Home.class);
-            Record_Edit.this.startActivity(records);
+                    case R.id.side_navigation_menu_item2:
+                        Intent records = new Intent(Record_Edit.this, Member_Home.class);
+                        Record_Edit.this.startActivity(records);
 
-            break;
+                        break;
 
-        case R.id.side_navigation_menu_item3:
-             Intent help = new Intent(Record_Edit.this, com.ospinet.app.help.class);
-             Record_Edit.this.startActivity(help);
+                    case R.id.side_navigation_menu_item3:
+                        Intent help = new Intent(Record_Edit.this, help.class);
+                        Record_Edit.this.startActivity(help);
 
-             break;
+                        break;
 
+                    case R.id.side_navigation_menu_item4:
+                        Intent home = new Intent(Record_Edit.this, PreMemberHome.class);
+                        Record_Edit.this.startActivity(home);
 
+                        break;
 
-                default:
-	        return;
-	        }
-	       // finish();
-	    }
+                    case R.id.side_navigation_menu_item5:
+                        Intent share = new Intent(Record_Edit.this, ShareMainActivity.class);
+                        Record_Edit.this.startActivity(share);
+
+                        break;
+
+                    case R.id.side_navigation_menu_item6:
+                        Intent search = new Intent(Record_Edit.this, SearchMainActivity.class);
+                        Record_Edit.this.startActivity(search);
+
+                        break;
+
+                    default:
+                        return;
+                }
+                // finish();
+            }
+
 			public void onBackPressed() {
 				// TODO Auto-generated method stub
 				

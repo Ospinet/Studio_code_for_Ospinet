@@ -86,33 +86,51 @@ public class help extends  SherlockActivity implements ISideNavigationCallback {
 
     @Override
     public void onSideNavigationItemClick(int itemId) {
-    	switch(itemId)
-    	{
-    case R.id.side_navigation_menu_item1:
-        Intent i = new Intent(help.this, LoginActivity.class);
-    	i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    	i.putExtra("EXIT", true);
+        switch(itemId)
+        {
+            case R.id.side_navigation_menu_item1:
+                Intent i = new Intent(help.this, LoginActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.putExtra("EXIT", true);
 
-    	help.this.startActivity(i);
+                help.this.startActivity(i);
 
-    	break;
+                break;
 
-    case R.id.side_navigation_menu_item2:
-         Intent records = new Intent(help.this, Member_Home.class);
-         help.this.startActivity(records);
+            case R.id.side_navigation_menu_item2:
+                Intent records = new Intent(help.this, Member_Home.class);
+                help.this.startActivity(records);
 
-         break;
+                break;
 
-    case R.id.side_navigation_menu_item3:
-         Intent help = new Intent(help.this, com.ospinet.app.help.class);
-         help.this.startActivity(help);
+            case R.id.side_navigation_menu_item3:
+                Intent help = new Intent(help.this, help.class);
+                help.this.startActivity(help);
 
-         break;
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(help.this, PreMemberHome.class);
+                help.this.startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(help.this, ShareMainActivity.class);
+                help.this.startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(help.this, SearchMainActivity.class);
+                help.this.startActivity(search);
+
+                break;
 
             default:
-        return;
+                return;
         }
-       // finish();
+        // finish();
     }
 
     private void showActionBar() {

@@ -275,35 +275,53 @@ public class Record_View extends SherlockActivity implements ISideNavigationCall
     });
 }
 		@Override
-	    public void onSideNavigationItemClick(int itemId) {
-			switch(itemId)
-			{
-	    case R.id.side_navigation_menu_item1:
-	    	Intent i = new Intent(Record_View.this, LoginActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			i.putExtra("EXIT", true);
+        public void onSideNavigationItemClick(int itemId) {
+            switch(itemId)
+            {
+                case R.id.side_navigation_menu_item1:
+                    Intent i = new Intent(Record_View.this, LoginActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    i.putExtra("EXIT", true);
 
-			Record_View.this.startActivity(i);
+                    Record_View.this.startActivity(i);
 
-	    	break;
+                    break;
 
-        case R.id.side_navigation_menu_item2:
-            Intent records = new Intent(Record_View.this, Member_Home.class);
-            Record_View.this.startActivity(records);
+                case R.id.side_navigation_menu_item2:
+                    Intent records = new Intent(Record_View.this, Member_Home.class);
+                    Record_View.this.startActivity(records);
 
-            break;
+                    break;
 
-        case R.id.side_navigation_menu_item3:
-             Intent help = new Intent(Record_View.this, com.ospinet.app.help.class);
-             Record_View.this.startActivity(help);
+                case R.id.side_navigation_menu_item3:
+                    Intent help = new Intent(Record_View.this, help.class);
+                    Record_View.this.startActivity(help);
 
-             break;
+                    break;
+
+                case R.id.side_navigation_menu_item4:
+                    Intent home = new Intent(Record_View.this, PreMemberHome.class);
+                    Record_View.this.startActivity(home);
+
+                    break;
+
+                case R.id.side_navigation_menu_item5:
+                    Intent share = new Intent(Record_View.this, ShareMainActivity.class);
+                    Record_View.this.startActivity(share);
+
+                    break;
+
+                case R.id.side_navigation_menu_item6:
+                    Intent search = new Intent(Record_View.this, SearchMainActivity.class);
+                    Record_View.this.startActivity(search);
+
+                    break;
 
                 default:
-	        return;
-	        }
-	       // finish();
-	    }
+                    return;
+            }
+            // finish();
+        }
 
 		public class DownloadImage extends AsyncTask<String, String, String> {
 

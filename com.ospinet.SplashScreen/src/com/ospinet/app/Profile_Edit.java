@@ -682,36 +682,53 @@ public class Profile_Edit extends SherlockActivity implements
 	}
 
 	@Override
-	public void onSideNavigationItemClick(int itemId) {
-		switch (itemId) {
-		case R.id.side_navigation_menu_item1:
-			Intent i = new Intent(Profile_Edit.this, LoginActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			i.putExtra("EXIT", true);
+    public void onSideNavigationItemClick(int itemId) {
+        switch(itemId)
+        {
+            case R.id.side_navigation_menu_item1:
+                Intent i = new Intent(Profile_Edit.this, LoginActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.putExtra("EXIT", true);
 
-			Profile_Edit.this.startActivity(i);
+                Profile_Edit.this.startActivity(i);
 
-			break;
+                break;
 
-		case R.id.side_navigation_menu_item2:
-			Intent records = new Intent(Profile_Edit.this, Member_Home.class);
+            case R.id.side_navigation_menu_item2:
+                Intent records = new Intent(Profile_Edit.this, Member_Home.class);
+                Profile_Edit.this.startActivity(records);
 
-			Profile_Edit.this.startActivity(records);
+                break;
 
-			break;
+            case R.id.side_navigation_menu_item3:
+                Intent help = new Intent(Profile_Edit.this, help.class);
+                Profile_Edit.this.startActivity(help);
 
-		case R.id.side_navigation_menu_item3:
-			Intent help = new Intent(Profile_Edit.this,
-					com.ospinet.app.help.class);
-			Profile_Edit.this.startActivity(help);
+                break;
 
-			break;
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(Profile_Edit.this, PreMemberHome.class);
+                Profile_Edit.this.startActivity(home);
 
-		default:
-			return;
-		}
-		// finish();
-	}
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(Profile_Edit.this, ShareMainActivity.class);
+                Profile_Edit.this.startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(Profile_Edit.this, SearchMainActivity.class);
+                Profile_Edit.this.startActivity(search);
+
+                break;
+
+            default:
+                return;
+        }
+        // finish();
+    }
     public class GetFriendRequestCount extends AsyncTask<String, String, String> {
         protected String doInBackground(String... params) {
 

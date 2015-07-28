@@ -219,35 +219,52 @@ private void showActionBar() {
 
 }
 			@Override
-	    public void onSideNavigationItemClick(int itemId) {
-			switch(itemId)
-			{
-	    case R.id.side_navigation_menu_item1:
-	    	Intent i = new Intent(Member_View.this, LoginActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			i.putExtra("EXIT", true);
+            public void onSideNavigationItemClick(int itemId) {
+                switch(itemId)
+                {
+                    case R.id.side_navigation_menu_item1:
+                        Intent i = new Intent(Member_View.this, LoginActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.putExtra("EXIT", true);
 
-			Member_View.this.startActivity(i);
+                        Member_View.this.startActivity(i);
 
-	    	break;
+                        break;
 
-        case R.id.side_navigation_menu_item2:
-            Intent records = new Intent(Member_View.this, Member_Home.class);
-            Member_View.this.startActivity(records);
+                    case R.id.side_navigation_menu_item2:
+                        Intent records = new Intent(Member_View.this, Member_Home.class);
+                        Member_View.this.startActivity(records);
 
-            break;
+                        break;
 
-        case R.id.side_navigation_menu_item3:
-            Intent help = new Intent(Member_View.this, com.ospinet.app.help.class);
-            Member_View.this.startActivity(help);
+                    case R.id.side_navigation_menu_item3:
+                        Intent help = new Intent(Member_View.this, help.class);
+                        Member_View.this.startActivity(help);
 
-            break;
+                        break;
 
-	    
-	    default:
-	        return;
-	        }
-	       // finish();
-	    }
+                    case R.id.side_navigation_menu_item4:
+                        Intent home = new Intent(Member_View.this, PreMemberHome.class);
+                        Member_View.this.startActivity(home);
+
+                        break;
+
+                    case R.id.side_navigation_menu_item5:
+                        Intent share = new Intent(Member_View.this, ShareMainActivity.class);
+                        Member_View.this.startActivity(share);
+
+                        break;
+
+                    case R.id.side_navigation_menu_item6:
+                        Intent search = new Intent(Member_View.this, SearchMainActivity.class);
+                        Member_View.this.startActivity(search);
+
+                        break;
+
+                    default:
+                        return;
+                }
+                // finish();
+            }
 
 }

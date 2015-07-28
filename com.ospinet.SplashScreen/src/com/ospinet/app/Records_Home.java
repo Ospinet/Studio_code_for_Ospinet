@@ -662,8 +662,26 @@ public class Records_Home extends SherlockActivity implements ISideNavigationCal
                 break;
 
             case R.id.side_navigation_menu_item3:
-                Intent help = new Intent(Records_Home.this, com.ospinet.app.help.class);
+                Intent help = new Intent(Records_Home.this, help.class);
                 Records_Home.this.startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(Records_Home.this, PreMemberHome.class);
+                Records_Home.this.startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(Records_Home.this, ShareMainActivity.class);
+                Records_Home.this.startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(Records_Home.this, SearchMainActivity.class);
+                Records_Home.this.startActivity(search);
 
                 break;
 

@@ -457,8 +457,26 @@ public class RecordsFragment extends SherlockFragment implements ISideNavigation
                 break;
 
             case R.id.side_navigation_menu_item3:
-                Intent help = new Intent(getActivity(), com.ospinet.app.help.class);
+                Intent help = new Intent(getActivity(), help.class);
                 getActivity().startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(getActivity(), PreMemberHome.class);
+                getActivity().startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(getActivity(), ShareMainActivity.class);
+                getActivity().startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(getActivity(), SearchMainActivity.class);
+                getActivity().startActivity(search);
 
                 break;
 

@@ -321,6 +321,16 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
         imgAdd.setVisibility(View.INVISIBLE);
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
+
+        imgMenu.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                sideNavigationView.toggleMenu();
+                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                rel.bringChildToFront(sideNavigationView);
+            }
+        });
         imgAdd.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -334,15 +344,7 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
 
             }
         });
-        imgMenu.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                sideNavigationView.toggleMenu();
-                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
-                rel.bringChildToFront(sideNavigationView);
-            }
-        });        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
+        ImageButton imgLogo = (ImageButton) v.findViewById(R.id.logo);
         TextView txtLogoName = (TextView) v.findViewById(R.id.logoName);
 
         imgLogo.setOnClickListener(new OnClickListener() {
@@ -387,8 +389,26 @@ public class ContactsFragment extends SherlockFragment implements ISideNavigatio
                 break;
 
             case R.id.side_navigation_menu_item3:
-                Intent help = new Intent(getActivity(), com.ospinet.app.help.class);
+                Intent help = new Intent(getActivity(), help.class);
                 getActivity().startActivity(help);
+
+                break;
+
+            case R.id.side_navigation_menu_item4:
+                Intent home = new Intent(getActivity(), PreMemberHome.class);
+                getActivity().startActivity(home);
+
+                break;
+
+            case R.id.side_navigation_menu_item5:
+                Intent share = new Intent(getActivity(), ShareMainActivity.class);
+                getActivity().startActivity(share);
+
+                break;
+
+            case R.id.side_navigation_menu_item6:
+                Intent search = new Intent(getActivity(), SearchMainActivity.class);
+                getActivity().startActivity(search);
 
                 break;
 

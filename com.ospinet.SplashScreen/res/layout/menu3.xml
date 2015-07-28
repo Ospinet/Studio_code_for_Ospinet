@@ -26,24 +26,34 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-       android:clickable="true"
+        android:clickable="true"
         android:background="@drawable/ospinet_big_logo" />
-<ImageButton
-    android:id="@+id/logoName"
-    android:layout_width="23dp"
-    android:layout_height="23dp"
-    android:clickable="true"
-    android:background="@drawable/home"
-     />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/logoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OSPINET"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="3dp"
+            android:clickable="true"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-    <SearchView android:id="@+id/search"
-        android:layout_width="305dp"
-        android:layout_height="40dp"
-        android:iconifiedByDefault="false"
-        android:layout_alignRight="@+id/lL"
+    <EditText
+        android:id="@+id/Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:hint="Search"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:layout_alignTop="@+id/lL"
         android:layout_alignBottom="@+id/lL"
-        android:queryHint="Search"/>
+        android:layout_alignLeft="@+id/lL"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF">
 
+    </EditText>
+    </LinearLayout>
 </RelativeLayout>

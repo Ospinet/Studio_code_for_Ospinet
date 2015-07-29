@@ -414,8 +414,8 @@ public class FilesFragment extends SherlockFragment implements ISideNavigationCa
         ImageButton imgAdd = (ImageButton) v.findViewById(R.id.add); //it's important to use your actionbar view that you inflated before
         imgAdd.setVisibility(View.INVISIBLE);
         ImageButton imgMenu = (ImageButton) v.findViewById(R.id.options);
-
         imgMenu.setOnClickListener(new OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub

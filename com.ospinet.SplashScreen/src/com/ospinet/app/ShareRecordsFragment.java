@@ -1,5 +1,14 @@
 package com.ospinet.app;
 
+import java.util.ArrayList;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -18,22 +27,12 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
-import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class ShareRecordsFragment extends SherlockFragment implements ISideNavigationCallback {
     private SearchView search;
@@ -42,17 +41,19 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
     ArrayList<record> arrrecords;
     public static ShareRecordAdapter rad;
     ProgressDialog dialog;
+    public static boolean isVisible = false;
+    
     ListView recordList;
     TextView txtNoRec,edit;
     Button btnNew;
-
-
+    View rootView;
+    public static Activity mActivity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.records, container, false);
-        showActionBar();
+         rootView = inflater.inflate(R.layout.records, container, false);
+         if(isVisible)  showActionBar();
         sideNavigationView = (SideNavigationView) rootView.findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
@@ -69,7 +70,16 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
         return rootView;
     }
 
-
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+//      super.setUserVisibleHint(isVisibleToUser);
+    	isVisible = isVisibleToUser;
+      if (isVisibleToUser) { 
+    	  if(getActivity()!=null)
+    	  showActionBar();
+      }
+      else {  }
+    }
     public class Loadrecord extends AsyncTask<String, String, String> {
 
         @Override
@@ -350,9 +360,13 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
         }
         // finish();
     }
-
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
+    }
     private void showActionBar() {
-        LayoutInflater inflator = (LayoutInflater) getActivity()
+        LayoutInflater inflator = (LayoutInflater) mActivity
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflator.inflate(R.layout.menu4, null);
         com.actionbarsherlock.app.ActionBar actionBar = getSherlockActivity().getSupportActionBar();
@@ -371,7 +385,7 @@ public class ShareRecordsFragment extends SherlockFragment implements ISideNavig
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 sideNavigationView.toggleMenu();
-                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                RelativeLayout rel = (RelativeLayout) rootView.findViewById(R.id.rel);
                 rel.bringChildToFront(sideNavigationView);
             }
         });

@@ -1,5 +1,6 @@
 package com.ospinet.app;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -43,16 +44,17 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
     ListView filesList;
     TextView txtNoRec,edit;
     Button btnNew;
-
+    public static boolean isVisible = false;
+    View rootView;
     public static String file_id="";
 
-
+    public static Activity mActivity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.files, container, false);
-        showActionBar();
+        rootView = inflater.inflate(R.layout.files, container, false);
+       
         sideNavigationView = (SideNavigationView) rootView.findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
@@ -69,7 +71,16 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
         return rootView;
     }
 
-
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+//      super.setUserVisibleHint(isVisibleToUser);
+      if (isVisibleToUser) { 
+    	  isVisible = isVisibleToUser;
+    	  if(getActivity()!=null)
+    	  showActionBar();
+      }
+      else {  }
+    }
     public class Loadfiles extends AsyncTask<String, String, String> {
 
         @Override
@@ -256,9 +267,13 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
             }
         }
     }
-
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
+    }
     private void showActionBar() {
-        LayoutInflater inflator = (LayoutInflater) getActivity()
+        LayoutInflater inflator = (LayoutInflater) mActivity
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflator.inflate(R.layout.menu4, null);
         com.actionbarsherlock.app.ActionBar actionBar = getSherlockActivity().getSupportActionBar();
@@ -277,7 +292,7 @@ public class ShareFilesFragment extends SherlockFragment implements ISideNavigat
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 sideNavigationView.toggleMenu();
-                RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.rel);
+                RelativeLayout rel = (RelativeLayout) rootView.findViewById(R.id.rel);
                 rel.bringChildToFront(sideNavigationView);
             }
         });
